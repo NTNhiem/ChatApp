@@ -4,12 +4,12 @@ import java.io.*;
 import java.util.*;
 
 public class DataStorage {
-    private String userPath = "UserData";
-    private String groupPath = "GroupData";
-    private String messPath = "MessageData";
+    private final String userPath = "UserData";
+    private final String groupPath = "GroupData";
+    private final String messPath = "MessageData";
 
-    private String fileNameChar = "Chat_Char.backup";
-    private String fileNameByte = "Chat_Byte.backup";
+    private final String fileNameChar = "Chat_Char.backup";
+    private final String fileNameByte = "Chat_Byte.backup";
 
     public DataStorage() {
         this.createUserFolder();
@@ -33,9 +33,7 @@ public class DataStorage {
 
             oos.writeObject(userArrayList);
             oos.flush();
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
@@ -55,11 +53,7 @@ public class DataStorage {
             fis = new FileInputStream(userPath + "\\" + fileNameByte);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<User>) ois.readObject();
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        } catch (ClassNotFoundException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
@@ -88,9 +82,7 @@ public class DataStorage {
 
             oos.writeObject(groupArrayList);
             oos.flush();
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
@@ -110,11 +102,7 @@ public class DataStorage {
             fis = new FileInputStream(groupPath + "\\" + fileNameByte);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<Group>) ois.readObject();
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        } catch (ClassNotFoundException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
@@ -143,9 +131,7 @@ public class DataStorage {
 
             oos.writeObject(messageArrayList);
             oos.flush();
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
@@ -165,11 +151,7 @@ public class DataStorage {
             fis = new FileInputStream(messPath + "\\" + fileNameByte);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<Message>) ois.readObject();
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        } catch (ClassNotFoundException ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {

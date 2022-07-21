@@ -28,6 +28,22 @@ public class Group {
 		return name;
 	}
 
+	public User getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(User admin) {
+		this.admin = admin;
+	}
+
+	public boolean isPrivate() {
+		return isPrivate;
+	}
+
+	public void setPrivate(boolean aPrivate) {
+		isPrivate = aPrivate;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
