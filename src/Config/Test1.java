@@ -1,4 +1,4 @@
-package Test;
+package Config;
 
 public class Test1 {
 

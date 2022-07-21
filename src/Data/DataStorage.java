@@ -1,5 +1,6 @@
 package Data;
 
+import Config.ChatAppConfig;
 import Models.Group;
 import Models.Message;
 import Models.User;
@@ -8,12 +9,11 @@ import java.io.*;
 import java.util.*;
 
 public class DataStorage {
-    private final String userPath = "UserData";
-    private final String groupPath = "GroupData";
-    private final String messPath = "MessageData";
+    private String userPath = ChatAppConfig.userPath;
 
-    private final String fileNameChar = "Chat_Char.backup";
-    private final String fileNameByte = "Chat_Byte.backup";
+    private String groupPath = ChatAppConfig.groupPath;
+    private String messPath = ChatAppConfig.messPath;
+
 
     public DataStorage() {
         this.createUserFolder();
@@ -32,7 +32,7 @@ public class DataStorage {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(userPath + "\\" + fileNameByte);
+            fos = new FileOutputStream(userPath);
             oos = new ObjectOutputStream(fos);
 
             oos.writeObject(userArrayList);
@@ -54,7 +54,7 @@ public class DataStorage {
         ObjectInputStream ois = null;
         ArrayList<User> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(userPath + "\\" + fileNameByte);
+            fis = new FileInputStream(userPath);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<User>) ois.readObject();
         } catch (Exception ex) {
@@ -81,7 +81,7 @@ public class DataStorage {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(groupPath + "\\" + fileNameByte);
+            fos = new FileOutputStream(groupPath);
             oos = new ObjectOutputStream(fos);
 
             oos.writeObject(groupArrayList);
@@ -103,7 +103,7 @@ public class DataStorage {
         ObjectInputStream ois = null;
         ArrayList<Group> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(groupPath + "\\" + fileNameByte);
+            fis = new FileInputStream(groupPath);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<Group>) ois.readObject();
         } catch (Exception ex) {
@@ -120,7 +120,7 @@ public class DataStorage {
     }
 
     public void createMessFolder() {
-        File dataFolder = new File(groupPath);
+        File dataFolder = new File(messPath);
         if (!dataFolder.exists()) {
             dataFolder.mkdirs();
         }
@@ -130,7 +130,7 @@ public class DataStorage {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(userPath + "\\" + fileNameByte);
+            fos = new FileOutputStream(userPath);
             oos = new ObjectOutputStream(fos);
 
             oos.writeObject(messageArrayList);
@@ -152,7 +152,7 @@ public class DataStorage {
         ObjectInputStream ois = null;
         ArrayList<Message> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(messPath + "\\" + fileNameByte);
+            fis = new FileInputStream(messPath);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<Message>) ois.readObject();
         } catch (Exception ex) {
