@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="1">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Config/ChatAppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/DataStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PasswordHash.java" afterDir="false" />
+    </list>
+    <list id="4b209799-de6b-430b-b781-2b5aad98bb95" name="Changes by Dell" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Models/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +29,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Models/Group.java">
+      <ranges>
+        <range start1="7" end1="8" start2="7" end2="8" changelist="4b209799-de6b-430b-b781-2b5aad98bb95" />
+        <range start1="30" end1="31" start2="30" end2="31" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="34" end1="35" start2="34" end2="35" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

@@ -28,11 +28,11 @@ public class Group {
 		return name;
 	}
 
-	public User getAdmin() {
+	public List<User> getAdmin() {
 		return admin;
 	}
 
-	public void setAdmin(User admin) {
+	public void setAdmin(List<User> admin) {
 		this.admin = admin;
 	}
 

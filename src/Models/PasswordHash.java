@@ -5,10 +5,10 @@ import java.security.SecureRandom;
 
 public class PasswordHash {
 
-    public static String getSHA256Password(String passwordToHash) throws NoSuchAlgorithmException {
-        String salt = getSalt();
+    public static String getSHA256Password(String passwordToHash) {
         String generatedPassword = null;
         try {
+            String salt = getSalt();
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(salt.getBytes());
             byte[] bytes = md.digest(passwordToHash.getBytes());
