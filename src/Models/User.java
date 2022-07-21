@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-	public int id;
-	public Gender gender;
-	public Date dob;
-	public String firstName;
-	public String lastName;
-	public String password;
-	public List<User> friends;
+	private int id;
+	private Gender gender;
+	private Date dob;
+	private String firstName;
+	private String lastName;
+	private String password;
+	private List<User> friends;
+
 	public User(int id, Gender gender, Date dob, String firstName, String lastName, String password) {
 		super();
 		this.id = id;
@@ -20,10 +21,9 @@ public class User {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
-		friends = new ArrayList<User>();
+		friends = new ArrayList<>();
 	}
-	
-	
+
 	public int getId() {
 		return id;
 	}

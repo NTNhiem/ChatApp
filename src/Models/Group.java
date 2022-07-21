@@ -3,9 +3,11 @@ package Models;
 import java.util.List;
 
 public class Group {
-	public int id;
-    public String name;
-    public List<User> members;
+	private int id;
+	private String name;
+	private User admin;
+	private boolean isPrivate;
+	private List<User> members;
     
 	public Group(int id, String name, List<User> members) {
 		super();

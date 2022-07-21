@@ -4,13 +4,13 @@ import java.util.Date;
 import java.util.List;
 
 public class Message {
-	public int id ;
-    public String content;
-    public Date sendDate;
-    public User sender ;
-    public User receiver;
-    public Group group;
-    public List<MessageAttachment> attachments;
+	private int id ;
+	private String content;
+	private Date sendDate;
+	private User sender ;
+	private User receiver;
+	private Group group;
+	private List<MessageAttachment> attachments;
     
 	public Message(int id, String content, Date sendDate, User sender, User receiver, Group group,
 			List<MessageAttachment> attachments) {
