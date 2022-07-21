@@ -1,4 +1,8 @@
-package Models;
+package Data;
+
+import Models.Group;
+import Models.Message;
+import Models.User;
 
 import java.io.*;
 import java.util.*;
