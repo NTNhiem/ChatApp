@@ -9,37 +9,24 @@ import java.io.*;
 import java.util.*;
 
 public class DataStorage {
-    private String userPath = ChatAppConfig.userPath;
 
-    private String groupPath = ChatAppConfig.groupPath;
-    private String messPath = ChatAppConfig.messPath;
+    private static DataStorage DSInstance;
+
+    private final ChatAppConfig chatAppConfig = new ChatAppConfig();
+    private final String userPath = chatAppConfig.properties.getProperty("userPath");
+
+    private final String groupPath = chatAppConfig.properties.getProperty("groupPath");
+    private final String messPath = chatAppConfig.properties.getProperty("messPath");
 
 
-    public DataStorage() {
-        this.createUserFolder();
-        this.createGroupFolder();
-        this.createMessFolder();
+    protected DataStorage() {
     }
 
-    public void createUserFolder() {
-        File dataFolder = new File(userPath);
-        if (!dataFolder.exists()) {
-            dataFolder.mkdirs();
+    public static DataStorage getInstance() {
+        if (DSInstance == null) {
+            DSInstance = new DataStorage();
         }
-    }
-
-    public void createMessFolder() {
-        File dataFolder = new File(messPath);
-        if (!dataFolder.exists()) {
-            dataFolder.mkdirs();
-        }
-    }
-
-    public void createGroupFolder() {
-        File dataFolder = new File(groupPath);
-        if (!dataFolder.exists()) {
-            dataFolder.mkdirs();
-        }
+        return DSInstance;
     }
 
 
