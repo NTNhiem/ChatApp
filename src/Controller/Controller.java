@@ -2,6 +2,7 @@ package Controller;
 
 import Data.DataStorage;
 import Models.Gender;
+import Models.Group;
 import Models.PasswordHash;
 import Models.User;
 
@@ -9,12 +10,14 @@ import java.util.*;
 
 public class Controller {
     private User currentUser = null;
+    private List<Group> groupList;
     private List<User> userList;
     private DataStorage dataStorage;
 
     public Controller() {
         this.dataStorage = DataStorage.getInstance();
         this.userList = this.dataStorage.readListUserAsByte();
+        this.groupList = this.dataStorage.readListGroupAsByte();
     }
 
     public User findUserByID(String id) {
@@ -24,28 +27,6 @@ public class Controller {
             }
         }
         return null;
-    }
-
-    public User findUserByUsername(String searchUsername) {
-        for (User user : userList) {
-            if (user.getUsername().equals(searchUsername)) {
-                return user;
-            }
-        }
-        return null;
-    }
-
-    public List<User> findUserByName(String name) {
-        List<User> searchList = new ArrayList<>();
-        for (User user : userList) {
-            String fullName = user.getFullName();
-            if(fullName.length() >= name.length()) {
-                if (fullName.contains(name) || fullName.startsWith(name)) {
-                    searchList.add(user);
-                }
-            }
-        }
-        return searchList;
     }
 
     public boolean addNewUser(Gender gender, Date dob, String firstName, String lastName, String username, String password){
@@ -68,7 +49,6 @@ public class Controller {
             String usernameCheck = user.getUsername();
             String passwordCheck = user.getPassword();
             if (usernameCheck.equals(username) && passwordCheck.equals(hashedPass)) {
-                currentUser = user;
                 return true;
             }
         }
