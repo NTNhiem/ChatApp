@@ -28,6 +28,21 @@ public class DataStorage {
         }
     }
 
+    public void createMessFolder() {
+        File dataFolder = new File(messPath);
+        if (!dataFolder.exists()) {
+            dataFolder.mkdirs();
+        }
+    }
+
+    public void createGroupFolder() {
+        File dataFolder = new File(groupPath);
+        if (!dataFolder.exists()) {
+            dataFolder.mkdirs();
+        }
+    }
+
+
     public void saveListUserAsByte(ArrayList<User> userArrayList) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
@@ -70,12 +85,6 @@ public class DataStorage {
         return list;
     }
 
-    public void createGroupFolder() {
-        File dataFolder = new File(groupPath);
-        if (!dataFolder.exists()) {
-            dataFolder.mkdirs();
-        }
-    }
 
     public void saveListGroupAsByte(ArrayList<Group> groupArrayList) {
         FileOutputStream fos = null;
@@ -119,12 +128,6 @@ public class DataStorage {
         return list;
     }
 
-    public void createMessFolder() {
-        File dataFolder = new File(messPath);
-        if (!dataFolder.exists()) {
-            dataFolder.mkdirs();
-        }
-    }
 
     public void saveListMessAsByte(ArrayList<Message> messageArrayList) {
         FileOutputStream fos = null;
