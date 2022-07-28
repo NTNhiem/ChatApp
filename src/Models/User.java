@@ -12,7 +12,8 @@ public class User {
     private String lastName;
     private String username;
     private String password;
-    private List<User> friends;
+    private Map<String, User> friends;
+    private List<Relationship> relationships;
 
     public User(String id, Gender gender, Date dob, String firstName, String lastName, String username, String password) {
         super();
@@ -23,7 +24,8 @@ public class User {
         this.lastName = lastName;
         this.username = username;
         this.password = password;
-        this.friends = new ArrayList<>();
+        this.friends = new HashMap<>();
+        this.relationships = new ArrayList<>();
     }
 
     public String getId() {
@@ -82,13 +84,19 @@ public class User {
         this.password = password;
     }
 
-    public List<User> getFriends() {
+    public Map<String, User> getFriends() {
         return friends;
     }
 
-    public void setFriends(List<User> friends) {
+    public void setFriends(Map<String, User> friends) {
         this.friends = friends;
     }
 
+    public List<Relationship> getRelationships() {
+        return relationships;
+    }
 
+    public void setRelationships(List<Relationship> relationships) {
+        this.relationships = relationships;
+    }
 }

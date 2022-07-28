@@ -16,6 +16,7 @@ public class DataStorage {
     private final String userPath = chatAppConfig.properties.getProperty("userPath");
 
     private final String groupPath = chatAppConfig.properties.getProperty("groupPath");
+
     private final String messPath = chatAppConfig.properties.getProperty("messPath");
 
 
@@ -71,7 +72,6 @@ public class DataStorage {
         }
         return list;
     }
-
 
     public void saveListGroupAsByte(ArrayList<Group> groupArrayList) {
         FileOutputStream fos = null;

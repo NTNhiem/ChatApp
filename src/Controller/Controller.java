@@ -17,6 +17,7 @@ public class Controller {
     public Controller(List<User> userList) {
         this.userList = userList;
         this.dataStorage = DataStorage.getInstance();
+        this.userList = this.dataStorage.readListUserAsByte();
     }
 
     public User findUserByID(String id) {
@@ -41,8 +42,8 @@ public class Controller {
     }
 
     public boolean login(String username, String password) {
-        username = username.strip();
-        password = password.strip();
+        username = username.trim();
+        password = password.trim();
         String hashedPass = PasswordHash.getSHA256Password(password);
         for (User user : userList) {
             String usernameCheck = user.getUsername();
@@ -52,6 +53,14 @@ public class Controller {
             }
         }
         return false;
+    }
+
+    public void logout() {
+        currentUser = null;
+    }
+
+    public void changeRelationship(int code) {
+
     }
 
 }
