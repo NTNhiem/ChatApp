@@ -16,7 +16,7 @@ public class Controller {
 
     public Controller(List<User> userList) {
         this.userList = userList;
-        this.dataStorage = new DataStorage();
+        this.dataStorage = null;
     }
 
     public User findUserByID(String id) {
