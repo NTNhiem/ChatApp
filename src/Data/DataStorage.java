@@ -12,8 +12,9 @@ public class DataStorage {
 
     private static DataStorage DSInstance;
 
-    private final ChatAppConfig chatAppConfig = new ChatAppConfig();
-    private final String userPath = chatAppConfig.properties.getProperty("userPath");
+    private final ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
+
+    private final String userPath = chatAppConfig.getStringProperty("userPath");
 
     private final String groupPath = chatAppConfig.getStringProperty("groupPath");
 

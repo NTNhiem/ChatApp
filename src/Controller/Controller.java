@@ -14,6 +14,10 @@ public class Controller {
     private List<Group> groupList;
     private List<User> userList;
     private DataStorage dataStorage;
+    private ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
+    private final int sentCode = this.chatAppConfig.getIntegerProperty("CODE_SENT_FRIEND_REQUEST"),
+            declineCode = this.chatAppConfig.getIntegerProperty("CODE_DECLINE_FRIEND_REQUEST"),
+            acceptCode = this.chatAppConfig.getIntegerProperty("CODE_ACCEPT_FRIEND_REQUEST");
 
     public Controller() {
         this.dataStorage = DataStorage.getInstance();
@@ -65,5 +69,36 @@ public class Controller {
             case sentCode ->
         }
     }
+
+    public Group findGroupById(String id) {
+        for (Group group : groupList) {
+            if (group.getId().equals(id)) {
+                return group;
+            }
+        }
+        return null;
+    }
+
+    public void createGroup(String name, boolean isPrivate) {
+        String id = UUID.randomUUID().toString();
+        Group g = new Group(id, name, isPrivate);
+        List<User> admins = new ArrayList<>();
+        admins.add(currentUser);
+        g.setAdmin(admins);
+    }
+
+    public boolean joinGroupByCode(String inviteCode) {
+        Group g = findGroupById(inviteCode);
+        if (!g.isPrivate()) {
+            List<User> members = g.getMembers();
+            if (!members.contains(currentUser)) {
+                members.add(currentUser);
+                g.setMembers(members);
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }

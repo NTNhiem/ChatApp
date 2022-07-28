@@ -13,6 +13,7 @@ public class User {
     private String fullName;
     private String username;
     private String password;
+    private List<Group> groups;
     private Map<String, User> friends;
     private List<Relationship> relationships;
 

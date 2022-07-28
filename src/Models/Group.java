@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Group {
@@ -8,12 +9,13 @@ public class Group {
 	private List<User> admin;
 	private boolean isPrivate;
 	private List<User> members;
-    
-	public Group(int id, String name, List<User> members) {
-		super();
+
+	public Group(String id, String name, boolean isPrivate) {
 		this.id = id;
 		this.name = name;
-		this.members = members;
+		this.isPrivate = isPrivate;
+		this.admin = new ArrayList<>();
+		this.members = new ArrayList<>();
 	}
 
 	public String getId() {
