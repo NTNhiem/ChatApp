@@ -3,7 +3,7 @@ package Models;
 import java.util.List;
 
 public class Group {
-	private int id;
+	private String id;
 	private String name;
 	private List<User> admin;
 	private boolean isPrivate;
@@ -16,11 +16,11 @@ public class Group {
 		this.members = members;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -40,8 +40,8 @@ public class Group {
 		return isPrivate;
 	}
 
-	public void setPrivate(boolean aPrivate) {
-		isPrivate = aPrivate;
+	public void setPrivate(boolean isPrivate) {
+		this.isPrivate = isPrivate;
 	}
 
 	public void setName(String name) {

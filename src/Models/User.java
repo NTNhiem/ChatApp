@@ -17,7 +17,6 @@ public class User {
     private List<Relationship> relationships;
 
     public User(String id, Gender gender, Date dob, String firstName, String lastName, String username, String password) {
-        super();
         this.id = id;
         this.gender = gender;
         this.dob = dob;
@@ -26,8 +25,17 @@ public class User {
         this.fullName = lastName + " " + firstName;
         this.username = username;
         this.password = password;
+        this.groups = new ArrayList<>();
         this.friends = new HashMap<>();
         this.relationships = new ArrayList<>();
+    }
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
     }
 
     public String getId() {

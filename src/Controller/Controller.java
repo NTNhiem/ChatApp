@@ -1,5 +1,6 @@
 package Controller;
 
+import Config.ChatAppConfig;
 import Data.DataStorage;
 import Models.Gender;
 import Models.Group;
@@ -59,8 +60,10 @@ public class Controller {
         currentUser = null;
     }
 
-    public void changeRelationship(int code) {
-
+    public void changeRelationship(int code, String invitingUserID, String invitedUserID) {
+        switch (code) {
+            case sentCode ->
+        }
     }
 
 }

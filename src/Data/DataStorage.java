@@ -15,9 +15,9 @@ public class DataStorage {
     private final ChatAppConfig chatAppConfig = new ChatAppConfig();
     private final String userPath = chatAppConfig.properties.getProperty("userPath");
 
-    private final String groupPath = chatAppConfig.properties.getProperty("groupPath");
+    private final String groupPath = chatAppConfig.getStringProperty("groupPath");
 
-    private final String messPath = chatAppConfig.properties.getProperty("messPath");
+    private final String messPath = chatAppConfig.getStringProperty("messPath");
 
 
     protected DataStorage() {
