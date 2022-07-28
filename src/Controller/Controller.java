@@ -20,7 +20,6 @@ public class Controller {
     }
 
     public User findUserByID(String id) {
-
         for (User user : userList) {
             if (user.getId().equals(id)) {
                 return user;
@@ -46,6 +45,11 @@ public class Controller {
         password = password.strip();
         String hashedPass = PasswordHash.getSHA256Password(password);
         for (User user : userList) {
+            String usernameCheck = user.getUsername();
+            String passwordCheck = user.getPassword();
+            if (usernameCheck.equals(username) && passwordCheck.equals(hashedPass)) {
+                return true;
+            }
         }
         return false;
     }
