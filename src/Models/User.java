@@ -10,6 +10,7 @@ public class User {
     private Date dob;
     private String firstName;
     private String lastName;
+    private String fullName;
     private String username;
     private String password;
     private Map<String, User> friends;
@@ -22,6 +23,7 @@ public class User {
         this.dob = dob;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.fullName = lastName + " " + firstName;
         this.username = username;
         this.password = password;
         this.friends = new HashMap<>();
@@ -66,6 +68,7 @@ public class User {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+        setFullName();
     }
 
     public String getLastName() {
@@ -74,7 +77,12 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+        setFullName();
     }
+
+    public String getFullName() {return fullName; }
+
+    public void setFullName() { this.fullName = firstName + lastName; }
 
     public String getPassword() {
         return password;

@@ -5,17 +5,14 @@ import Models.Gender;
 import Models.PasswordHash;
 import Models.User;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 
 public class Controller {
+    private User currentUser = null;
     private List<User> userList;
     private DataStorage dataStorage;
 
-    public Controller(List<User> userList) {
-        this.userList = userList;
+    public Controller() {
         this.dataStorage = DataStorage.getInstance();
         this.userList = this.dataStorage.readListUserAsByte();
     }
@@ -27,6 +24,28 @@ public class Controller {
             }
         }
         return null;
+    }
+
+    public User findUserByUsername(String searchUsername) {
+        for (User user : userList) {
+            if (user.getUsername().equals(searchUsername)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public List<User> findUserByName(String name) {
+        List<User> searchList = new ArrayList<>();
+        for (User user : userList) {
+            String fullName = user.getFullName();
+            if(fullName.length() >= name.length()) {
+                if (fullName.contains(name) || fullName.startsWith(name)) {
+                    searchList.add(user);
+                }
+            }
+        }
+        return searchList;
     }
 
     public boolean addNewUser(Gender gender, Date dob, String firstName, String lastName, String username, String password){
@@ -49,6 +68,7 @@ public class Controller {
             String usernameCheck = user.getUsername();
             String passwordCheck = user.getPassword();
             if (usernameCheck.equals(username) && passwordCheck.equals(hashedPass)) {
+                currentUser = user;
                 return true;
             }
         }
