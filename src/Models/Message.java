@@ -10,7 +10,6 @@ public class Message {
 	private User sender ;
 	private User receiver;
 	private Group group;
-	private List<MessageAttachment> attachments;
     
 	public Message(int id, String content, Date sendDate, User sender, User receiver, Group group,
 			List<MessageAttachment> attachments) {
@@ -21,7 +20,6 @@ public class Message {
 		this.sender = sender;
 		this.receiver = receiver;
 		this.group = group;
-		this.attachments = attachments;
 	}
 
 	public int getId() {
@@ -71,14 +69,4 @@ public class Message {
 	public void setGroup(Group group) {
 		this.group = group;
 	}
-
-	public List<MessageAttachment> getAttachments() {
-		return attachments;
-	}
-
-	public void setAttachments(List<MessageAttachment> attachments) {
-		this.attachments = attachments;
-	}
-    
-    
 }
