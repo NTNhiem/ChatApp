@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="change hash">
+    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="small changes">
+      <change afterPath="$PROJECT_DIR$/src/Models/Conversation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ultilities/PasswordHash.java" afterDir="false" />
     </list>
-    <list id="9e725b44-6988-4a3d-bf51-5ccb655d0aba" name="Changes by Tieng" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/MessageAttachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Attachment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PasswordHash.java" afterDir="false" />
+    <list id="c9b5e2a5-caa0-46d1-a137-1205d4384fb4" name="Changes by Tieng" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Ultilities/InvitationCodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +73,7 @@
       <updated>1657786292999</updated>
       <workItem from="1657786294563" duration="331000" />
       <workItem from="1658382255405" duration="3157000" />
+      <workItem from="1659595504740" duration="1086000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1657786546034</created>
@@ -111,7 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659593637328</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="small changes">
+      <created>1659595608689</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1659595608689</updated>
+    </task>
+    <task id="LOCAL-00007" summary="small change">
+      <created>1659595685248</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659595685248</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +145,9 @@
     <MESSAGE value="1" />
     <MESSAGE value="datastorage" />
     <MESSAGE value="change hash" />
-    <option name="LAST_COMMIT_MESSAGE" value="change hash" />
+    <MESSAGE value="small changes" />
+    <MESSAGE value="Changes by Tieng" />
+    <MESSAGE value="small change" />
+    <option name="LAST_COMMIT_MESSAGE" value="small change" />
   </component>
 </project>

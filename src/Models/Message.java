@@ -7,7 +7,7 @@ public class Message {
 	private int id ;
 	private String content;
 	private Date sendDate;
-	private User sender ;
+	private User sender;
 	private List<User> receiver;
 	private Group group;
     
