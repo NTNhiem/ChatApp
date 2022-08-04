@@ -10,6 +10,7 @@ public class Group {
 	private boolean isPrivate;
 	private List<User> members;
 
+
 	public Group(String id, String name, boolean isPrivate) {
 		this.id = id;
 		this.name = name;

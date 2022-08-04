@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="controller">
+    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="change hash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PasswordHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
+    </list>
+    <list id="9e725b44-6988-4a3d-bf51-5ccb655d0aba" name="Changes by Tieng" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/MessageAttachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Attachment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PasswordHash.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +97,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658991782441</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="change hash">
+      <created>1659593582735</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659593582735</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change hash">
+      <created>1659593637327</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659593637328</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +131,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="datastorage" />
-    <option name="LAST_COMMIT_MESSAGE" value="datastorage" />
+    <MESSAGE value="change hash" />
+    <option name="LAST_COMMIT_MESSAGE" value="change hash" />
   </component>
 </project>
