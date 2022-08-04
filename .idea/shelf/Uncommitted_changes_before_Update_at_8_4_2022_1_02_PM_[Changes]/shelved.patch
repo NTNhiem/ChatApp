@@ -1,0 +1,94 @@
+Index: src/Models/Message.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Models;\r\n\r\nimport java.util.Date;\r\nimport java.util.List;\r\n\r\npublic class Message {\r\n\tprivate int id ;\r\n\tprivate String content;\r\n\tprivate Date sendDate;\r\n\tprivate User sender ;\r\n\tprivate User receiver;\r\n\tprivate Group group;\r\n\tprivate List<MessageAttachment> attachments;\r\n    \r\n\tpublic Message(int id, String content, Date sendDate, User sender, User receiver, Group group,\r\n\t\t\tList<MessageAttachment> attachments) {\r\n\t\tsuper();\r\n\t\tthis.id = id;\r\n\t\tthis.content = content;\r\n\t\tthis.sendDate = sendDate;\r\n\t\tthis.sender = sender;\r\n\t\tthis.receiver = receiver;\r\n\t\tthis.group = group;\r\n\t\tthis.attachments = attachments;\r\n\t}\r\n\r\n\tpublic int getId() {\r\n\t\treturn id;\r\n\t}\r\n\r\n\tpublic void setId(int id) {\r\n\t\tthis.id = id;\r\n\t}\r\n\r\n\tpublic String getContent() {\r\n\t\treturn content;\r\n\t}\r\n\r\n\tpublic void setContent(String content) {\r\n\t\tthis.content = content;\r\n\t}\r\n\r\n\tpublic Date getSendDate() {\r\n\t\treturn sendDate;\r\n\t}\r\n\r\n\tpublic void setSendDate(Date sendDate) {\r\n\t\tthis.sendDate = sendDate;\r\n\t}\r\n\r\n\tpublic User getSender() {\r\n\t\treturn sender;\r\n\t}\r\n\r\n\tpublic void setSender(User sender) {\r\n\t\tthis.sender = sender;\r\n\t}\r\n\r\n\tpublic User getReceiver() {\r\n\t\treturn receiver;\r\n\t}\r\n\r\n\tpublic void setReceiver(User receiver) {\r\n\t\tthis.receiver = receiver;\r\n\t}\r\n\r\n\tpublic Group getGroup() {\r\n\t\treturn group;\r\n\t}\r\n\r\n\tpublic void setGroup(Group group) {\r\n\t\tthis.group = group;\r\n\t}\r\n\r\n\tpublic List<MessageAttachment> getAttachments() {\r\n\t\treturn attachments;\r\n\t}\r\n\r\n\tpublic void setAttachments(List<MessageAttachment> attachments) {\r\n\t\tthis.attachments = attachments;\r\n\t}\r\n    \r\n    \r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Models/Message.java b/src/Models/Message.java
+--- a/src/Models/Message.java	(revision 51df96ad951f7d35f2607b9ae1ad9b88e1086c02)
++++ b/src/Models/Message.java	(date 1659592554324)
+@@ -8,11 +8,11 @@
+ 	private String content;
+ 	private Date sendDate;
+ 	private User sender ;
+-	private User receiver;
++	private List<User> receiver;
+ 	private Group group;
+ 	private List<MessageAttachment> attachments;
+     
+-	public Message(int id, String content, Date sendDate, User sender, User receiver, Group group,
++	public Message(int id, String content, Date sendDate, User sender, List<User> receiver, Group group,
+ 			List<MessageAttachment> attachments) {
+ 		super();
+ 		this.id = id;
+@@ -56,11 +56,11 @@
+ 		this.sender = sender;
+ 	}
+ 
+-	public User getReceiver() {
++	public List<User> getReceiver() {
+ 		return receiver;
+ 	}
+ 
+-	public void setReceiver(User receiver) {
++	public void setReceiver(List<User> receiver) {
+ 		this.receiver = receiver;
+ 	}
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"datastorage\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/Controller.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/Controller.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BvUwMjpHzg9LUl7AS3uoqtgkMs\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/IntelliJ repos/ChatApp/src/Models&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"\" />\r\n      <created>1657786292999</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657786292999</updated>\r\n      <workItem from=\"1657786294563\" duration=\"331000\" />\r\n      <workItem from=\"1658382255405\" duration=\"3157000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"1\">\r\n      <created>1657786546034</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657786546034</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"datastorage\">\r\n      <created>1658987283743</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1658987283743</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"datastorage\">\r\n      <created>1658991782441</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1658991782441</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"1\" />\r\n    <MESSAGE value=\"datastorage\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"datastorage\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 51df96ad951f7d35f2607b9ae1ad9b88e1086c02)
++++ b/.idea/workspace.xml	(date 1659592912560)
+@@ -4,8 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="datastorage">
+-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
++    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="controller">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -67,6 +68,7 @@
+       <updated>1657786292999</updated>
+       <workItem from="1657786294563" duration="331000" />
+       <workItem from="1658382255405" duration="3157000" />
++      <workItem from="1659592215117" duration="691000" />
+     </task>
+     <task id="LOCAL-00001" summary="1">
+       <created>1657786546034</created>
+@@ -89,7 +91,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1658991782441</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="controller">
++      <created>1658997087280</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1658997087280</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -109,6 +118,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="1" />
+     <MESSAGE value="datastorage" />
+-    <option name="LAST_COMMIT_MESSAGE" value="datastorage" />
++    <MESSAGE value="controller" />
++    <option name="LAST_COMMIT_MESSAGE" value="controller" />
+   </component>
+ </project>
+\ No newline at end of file

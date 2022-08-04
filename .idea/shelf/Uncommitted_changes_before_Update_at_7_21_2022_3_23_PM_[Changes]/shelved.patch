@@ -1,0 +1,78 @@
+Index: src/Models/DataStorage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Models;\r\n\r\nimport java.io.*;\r\nimport java.util.*;\r\n\r\npublic class DataStorage {\r\n    private final String userPath = \"UserData\";\r\n    private final String groupPath = \"GroupData\";\r\n    private final String messPath = \"MessageData\";\r\n\r\n    private final String fileNameChar = \"Chat_Char.backup\";\r\n    private final String fileNameByte = \"Chat_Byte.backup\";\r\n\r\n    public DataStorage() {\r\n        this.createUserFolder();\r\n        this.createGroupFolder();\r\n        this.createMessFolder();\r\n    }\r\n\r\n    public void createUserFolder() {\r\n        File dataFolder = new File(userPath);\r\n        if (!dataFolder.exists()) {\r\n            dataFolder.mkdirs();\r\n        }\r\n    }\r\n\r\n    public void saveListUserAsByte(ArrayList<User> userArrayList) {\r\n        FileOutputStream fos = null;\r\n        ObjectOutputStream oos = null;\r\n        try {\r\n            fos = new FileOutputStream(userPath + \"\\\\\" + fileNameByte);\r\n            oos = new ObjectOutputStream(fos);\r\n\r\n            oos.writeObject(userArrayList);\r\n            oos.flush();\r\n        } catch (Exception ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fos.close();\r\n                oos.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n    }\r\n\r\n    public ArrayList<User> readListUserAsByte() {\r\n        FileInputStream fis = null;\r\n        ObjectInputStream ois = null;\r\n        ArrayList<User> list = new ArrayList<>();\r\n        try {\r\n            fis = new FileInputStream(userPath + \"\\\\\" + fileNameByte);\r\n            ois = new ObjectInputStream(fis);\r\n            list = (ArrayList<User>) ois.readObject();\r\n        } catch (Exception ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fis.close();\r\n                ois.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n        return list;\r\n    }\r\n\r\n    public void createGroupFolder() {\r\n        File dataFolder = new File(groupPath);\r\n        if (!dataFolder.exists()) {\r\n            dataFolder.mkdirs();\r\n        }\r\n    }\r\n\r\n    public void saveListGroupAsByte(ArrayList<Group> groupArrayList) {\r\n        FileOutputStream fos = null;\r\n        ObjectOutputStream oos = null;\r\n        try {\r\n            fos = new FileOutputStream(groupPath + \"\\\\\" + fileNameByte);\r\n            oos = new ObjectOutputStream(fos);\r\n\r\n            oos.writeObject(groupArrayList);\r\n            oos.flush();\r\n        } catch (Exception ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fos.close();\r\n                oos.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n    }\r\n\r\n    public ArrayList<Group> readListGroupAsByte() {\r\n        FileInputStream fis = null;\r\n        ObjectInputStream ois = null;\r\n        ArrayList<Group> list = new ArrayList<>();\r\n        try {\r\n            fis = new FileInputStream(groupPath + \"\\\\\" + fileNameByte);\r\n            ois = new ObjectInputStream(fis);\r\n            list = (ArrayList<Group>) ois.readObject();\r\n        } catch (Exception ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fis.close();\r\n                ois.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n        return list;\r\n    }\r\n\r\n    public void createMessFolder() {\r\n        File dataFolder = new File(groupPath);\r\n        if (!dataFolder.exists()) {\r\n            dataFolder.mkdirs();\r\n        }\r\n    }\r\n\r\n    public void saveListMessAsByte(ArrayList<Message> messageArrayList) {\r\n        FileOutputStream fos = null;\r\n        ObjectOutputStream oos = null;\r\n        try {\r\n            fos = new FileOutputStream(userPath + \"\\\\\" + fileNameByte);\r\n            oos = new ObjectOutputStream(fos);\r\n\r\n            oos.writeObject(messageArrayList);\r\n            oos.flush();\r\n        } catch (Exception ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fos.close();\r\n                oos.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n    }\r\n\r\n    public ArrayList<Message> readListMessAsByte() {\r\n        FileInputStream fis = null;\r\n        ObjectInputStream ois = null;\r\n        ArrayList<Message> list = new ArrayList<>();\r\n        try {\r\n            fis = new FileInputStream(messPath + \"\\\\\" + fileNameByte);\r\n            ois = new ObjectInputStream(fis);\r\n            list = (ArrayList<Message>) ois.readObject();\r\n        } catch (Exception ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fis.close();\r\n                ois.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n        return list;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/Models/DataStorage.java b/src/Models/DataStorage.java
+--- a/src/Models/DataStorage.java	
++++ b/src/Models/DataStorage.java	
+@@ -4,12 +4,10 @@
+ import java.util.*;
+ 
+ public class DataStorage {
+-    private final String userPath = "UserData";
+-    private final String groupPath = "GroupData";
+-    private final String messPath = "MessageData";
++    private final String userPath = Config.userPath;
++    private final String groupPath = Config.groupPath;
++    private final String messPath = Config.messPath;
+ 
+-    private final String fileNameChar = "Chat_Char.backup";
+-    private final String fileNameByte = "Chat_Byte.backup";
+ 
+     public DataStorage() {
+         this.createUserFolder();
+@@ -28,7 +26,7 @@
+         FileOutputStream fos = null;
+         ObjectOutputStream oos = null;
+         try {
+-            fos = new FileOutputStream(userPath + "\\" + fileNameByte);
++            fos = new FileOutputStream(userPath);
+             oos = new ObjectOutputStream(fos);
+ 
+             oos.writeObject(userArrayList);
+@@ -50,7 +48,7 @@
+         ObjectInputStream ois = null;
+         ArrayList<User> list = new ArrayList<>();
+         try {
+-            fis = new FileInputStream(userPath + "\\" + fileNameByte);
++            fis = new FileInputStream(userPath);
+             ois = new ObjectInputStream(fis);
+             list = (ArrayList<User>) ois.readObject();
+         } catch (Exception ex) {
+@@ -77,7 +75,7 @@
+         FileOutputStream fos = null;
+         ObjectOutputStream oos = null;
+         try {
+-            fos = new FileOutputStream(groupPath + "\\" + fileNameByte);
++            fos = new FileOutputStream(groupPath);
+             oos = new ObjectOutputStream(fos);
+ 
+             oos.writeObject(groupArrayList);
+@@ -99,7 +97,7 @@
+         ObjectInputStream ois = null;
+         ArrayList<Group> list = new ArrayList<>();
+         try {
+-            fis = new FileInputStream(groupPath + "\\" + fileNameByte);
++            fis = new FileInputStream(groupPath);
+             ois = new ObjectInputStream(fis);
+             list = (ArrayList<Group>) ois.readObject();
+         } catch (Exception ex) {
+@@ -126,7 +124,7 @@
+         FileOutputStream fos = null;
+         ObjectOutputStream oos = null;
+         try {
+-            fos = new FileOutputStream(userPath + "\\" + fileNameByte);
++            fos = new FileOutputStream(userPath);
+             oos = new ObjectOutputStream(fos);
+ 
+             oos.writeObject(messageArrayList);
+@@ -148,7 +146,7 @@
+         ObjectInputStream ois = null;
+         ArrayList<Message> list = new ArrayList<>();
+         try {
+-            fis = new FileInputStream(messPath + "\\" + fileNameByte);
++            fis = new FileInputStream(messPath);
+             ois = new ObjectInputStream(fis);
+             list = (ArrayList<Message>) ois.readObject();
+         } catch (Exception ex) {

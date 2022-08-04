@@ -1,0 +1,99 @@
+Index: src/Models/DataStorage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Models;\r\n\r\nimport java.io.*;\r\nimport java.util.*;\r\n\r\npublic class DataStorage {\r\n    private String userPath = \"UserData\";\r\n    private String groupPath = \"GroupData\";\r\n    private String messPath = \"MessageData\";\r\n\r\n    private String fileNameChar = \"Chat_Char.backup\";\r\n    private String fileNameByte = \"Chat_Byte.backup\";\r\n\r\n    public DataStorage() {\r\n        this.createUserFolder();\r\n        this.createGroupFolder();\r\n        this.createMessFolder();\r\n    }\r\n\r\n    public void createUserFolder() {\r\n        File dataFolder = new File(userPath);\r\n        if (!dataFolder.exists()) {\r\n            dataFolder.mkdirs();\r\n        }\r\n    }\r\n\r\n    public void saveListUserAsByte(ArrayList<User> userArrayList) {\r\n        FileOutputStream fos = null;\r\n        ObjectOutputStream oos = null;\r\n        try {\r\n            fos = new FileOutputStream(userPath + \"\\\\\" + fileNameByte);\r\n            oos = new ObjectOutputStream(fos);\r\n\r\n            oos.writeObject(userArrayList);\r\n            oos.flush();\r\n        } catch (FileNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (IOException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fos.close();\r\n                oos.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n    }\r\n\r\n    public ArrayList<User> readListUserAsByte() {\r\n        FileInputStream fis = null;\r\n        ObjectInputStream ois = null;\r\n        ArrayList<User> list = new ArrayList<>();\r\n        try {\r\n            fis = new FileInputStream(userPath + \"\\\\\" + fileNameByte);\r\n            ois = new ObjectInputStream(fis);\r\n            list = (ArrayList<User>) ois.readObject();\r\n        } catch (FileNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (IOException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (ClassNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fis.close();\r\n                ois.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n        return list;\r\n    }\r\n\r\n    public void createGroupFolder() {\r\n        File dataFolder = new File(groupPath);\r\n        if (!dataFolder.exists()) {\r\n            dataFolder.mkdirs();\r\n        }\r\n    }\r\n\r\n    public void saveListGroupAsByte(ArrayList<Group> groupArrayList) {\r\n        FileOutputStream fos = null;\r\n        ObjectOutputStream oos = null;\r\n        try {\r\n            fos = new FileOutputStream(groupPath + \"\\\\\" + fileNameByte);\r\n            oos = new ObjectOutputStream(fos);\r\n\r\n            oos.writeObject(groupArrayList);\r\n            oos.flush();\r\n        } catch (FileNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (IOException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fos.close();\r\n                oos.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n    }\r\n\r\n    public ArrayList<Group> readListGroupAsByte() {\r\n        FileInputStream fis = null;\r\n        ObjectInputStream ois = null;\r\n        ArrayList<Group> list = new ArrayList<>();\r\n        try {\r\n            fis = new FileInputStream(groupPath + \"\\\\\" + fileNameByte);\r\n            ois = new ObjectInputStream(fis);\r\n            list = (ArrayList<Group>) ois.readObject();\r\n        } catch (FileNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (IOException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (ClassNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fis.close();\r\n                ois.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n        return list;\r\n    }\r\n\r\n    public void createMessFolder() {\r\n        File dataFolder = new File(groupPath);\r\n        if (!dataFolder.exists()) {\r\n            dataFolder.mkdirs();\r\n        }\r\n    }\r\n\r\n    public void saveListMessAsByte(ArrayList<Message> messageArrayList) {\r\n        FileOutputStream fos = null;\r\n        ObjectOutputStream oos = null;\r\n        try {\r\n            fos = new FileOutputStream(userPath + \"\\\\\" + fileNameByte);\r\n            oos = new ObjectOutputStream(fos);\r\n\r\n            oos.writeObject(messageArrayList);\r\n            oos.flush();\r\n        } catch (FileNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (IOException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fos.close();\r\n                oos.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n    }\r\n\r\n    public ArrayList<Message> readListMessAsByte() {\r\n        FileInputStream fis = null;\r\n        ObjectInputStream ois = null;\r\n        ArrayList<Message> list = new ArrayList<>();\r\n        try {\r\n            fis = new FileInputStream(messPath + \"\\\\\" + fileNameByte);\r\n            ois = new ObjectInputStream(fis);\r\n            list = (ArrayList<Message>) ois.readObject();\r\n        } catch (FileNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (IOException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } catch (ClassNotFoundException ex) {\r\n            System.out.println(ex.getMessage());\r\n        } finally {\r\n            try {\r\n                fis.close();\r\n                ois.close();\r\n            } catch (IOException ex) {\r\n                System.out.println(ex.getMessage());\r\n            }\r\n        }\r\n        return list;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Models/DataStorage.java b/src/Models/DataStorage.java
+--- a/src/Models/DataStorage.java	
++++ b/src/Models/DataStorage.java	
+@@ -8,6 +8,7 @@
+     private String groupPath = "GroupData";
+     private String messPath = "MessageData";
+ 
++
+     private String fileNameChar = "Chat_Char.backup";
+     private String fileNameByte = "Chat_Byte.backup";
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"1\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/Models/DataStorage.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BvUwMjpHzg9LUl7AS3uoqtgkMs\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"D:/IntelliJ repos/ChatApp/src/Models\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"\" />\r\n      <created>1657786292999</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657786292999</updated>\r\n      <workItem from=\"1657786294563\" duration=\"331000\" />\r\n      <workItem from=\"1658382255405\" duration=\"3157000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"1\">\r\n      <created>1657786546034</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657786546034</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"1\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"1\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,8 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="1">
+-      <change afterPath="$PROJECT_DIR$/src/Models/DataStorage.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Models/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/DataStorage.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -34,21 +34,21 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "D:/IntelliJ repos/ChatApp/src/Models",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/IntelliJ repos/ChatApp/src/Models&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="D:\IntelliJ repos\ChatApp\src\Models" />
+@@ -66,7 +66,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1657786292999</updated>
+       <workItem from="1657786294563" duration="331000" />
+-      <workItem from="1658382255405" duration="3157000" />
++      <workItem from="1658382255405" duration="6067000" />
+     </task>
+     <task id="LOCAL-00001" summary="1">
+       <created>1657786546034</created>
+@@ -75,7 +75,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1657786546034</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="1">
++      <created>1658385714106</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1658385714106</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
