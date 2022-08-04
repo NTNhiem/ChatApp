@@ -12,7 +12,7 @@ public class Message {
 	private Group group;
     
 	public Message(int id, String content, Date sendDate, User sender, List<User> receiver, Group group,
-			List<MessageAttachment> attachments) {
+			List<Attachment> attachments) {
 		super();
 		this.id = id;
 		this.content = content;

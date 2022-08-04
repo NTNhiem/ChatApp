@@ -17,16 +17,20 @@ public class PasswordHash {
                         .substring(1));
             }
             generatedPassword = sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException exception) {
+            exception.printStackTrace();
         }
         return generatedPassword;
     }
 
-    public static String getSalt() throws NoSuchAlgorithmException {
-        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
+    public static String getSalt() {
         byte[] salt = new byte[16];
-        sr.nextBytes(salt);
+        try {
+            SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
+            sr.nextBytes(salt);
+        } catch (NoSuchAlgorithmException exception) {
+            exception.printStackTrace();
+        }
         return salt.toString();
     }
 }

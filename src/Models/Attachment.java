@@ -1,11 +1,11 @@
 package Models;
 
-public class MessageAttachment {
+public class Attachment {
     private String id;
     private String directory;
     private AttachmentType type;
 
-    public MessageAttachment(String id, String directory, AttachmentType type) {
+    public Attachment(String id, String directory, AttachmentType type) {
         this.id = id;
         this.directory = directory;
         this.type = type;
