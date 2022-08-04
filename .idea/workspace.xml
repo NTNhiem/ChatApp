@@ -5,14 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="small changes">
-      <change afterPath="$PROJECT_DIR$/src/Models/Conversation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/ConversationGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/TextMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/ConversationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_21_2022_2_31_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_21_2022_2_31_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_21_2022_3_23_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_21_2022_3_23_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_4_2022_1_02_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_4_2022_1_02_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ultilities/PasswordHash.java" afterDir="false" />
-    </list>
-    <list id="c9b5e2a5-caa0-46d1-a137-1205d4384fb4" name="Changes by Tieng" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Ultilities/InvitationCodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/DataStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Attachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Attachment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/RelationshipStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/RelationshipStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
     </list>
+    <list id="da144c96-61fb-40ed-b558-f6dd3310cdda" name="Changes by Dell" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Models/ConversationSingle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config" beforeDir="false" afterPath="$PROJECT_DIR$/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/DataStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
+    </list>
+    <list id="c9b5e2a5-caa0-46d1-a137-1205d4384fb4" name="Changes by Tieng" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +47,53 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Services/GroupService.java">
+      <ranges>
+        <range start1="6" end1="9" start2="6" end2="9" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="29" end1="30" start2="29" end2="30" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="48" end1="48" start2="48" end2="66" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Models/Message.java">
+      <ranges>
+        <range start1="3" end1="4" start2="3" end2="3" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="5" end1="6" start2="4" end2="5" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="7" end1="8" start2="6" end2="6" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="10" end1="15" start2="8" end2="12" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="17" end1="18" start2="14" end2="14" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="20" end1="22" start2="16" end2="17" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="31" end1="39" start2="26" end2="26" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="56" end1="66" start2="43" end2="45" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="68" end1="70" start2="47" end2="49" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Services/UserService.java">
+      <ranges>
+        <range start1="5" end1="6" start2="5" end2="5" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="7" end1="7" start2="6" end2="7" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="8" end1="11" start2="8" end2="10" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="15" end1="15" start2="14" end2="15" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="31" end1="33" start2="31" end2="33" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="57" end1="57" start2="57" end2="65" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Data/DataStorage.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="4" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="4" end1="5" start2="5" end2="5" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="20" end1="22" start2="20" end2="21" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="33" end1="34" start2="32" end2="32" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="119" end1="120" start2="117" end2="118" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="123" end1="124" start2="121" end2="122" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="126" end1="127" start2="124" end2="125" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="140" end1="141" start2="138" end2="139" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="143" end1="144" start2="141" end2="142" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+        <range start1="145" end1="146" start2="143" end2="144" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
+        <range start1="147" end1="148" start2="145" end2="146" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -39,22 +105,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IntelliJ repos/ChatApp/src/Models&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "D:/IntelliJ repos/ChatApp/src/Models",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IntelliJ repos\ChatApp\src\Models" />
@@ -149,5 +217,9 @@
     <MESSAGE value="Changes by Tieng" />
     <MESSAGE value="small change" />
     <option name="LAST_COMMIT_MESSAGE" value="small change" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

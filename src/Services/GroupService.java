@@ -26,6 +26,15 @@ public class GroupService {
         return null;
     }
 
+    public Group findGroupByInviteCode(String code) {
+        for (Group group : groupList) {
+            if (group.getInviteCode().equals(code)) {
+                return group;
+            }
+        }
+        return null;
+    }
+
     public void createGroup(String name, boolean isPrivate, User creator) {
         String id = UUID.randomUUID().toString();
         Group g = new Group(id, name, isPrivate);
@@ -35,7 +44,7 @@ public class GroupService {
     }
 
     public boolean joinGroupByCode(String inviteCode, User invitedUser) {
-        Group group = findGroupById(inviteCode);
+        Group group = findGroupByInviteCode(inviteCode);
         if (!group.isPrivate()) {
             List<User> members = group.getMembers();
             if (!members.contains(invitedUser)) {
@@ -45,5 +54,23 @@ public class GroupService {
             }
         }
         return false;
+    }
+
+    public boolean joinGroupByUser(Group group, User invitedUser) {
+        List<User> members = group.getMembers();
+        if (!members.contains(invitedUser)) {
+            members.add(invitedUser);
+            group.setMembers(members);
+            return true;
+        }
+        return false;
+    }
+
+    public String generateGroupID() {
+        String id;
+        do {
+            id = UUID.randomUUID().toString();
+        } while (findGroupById(id) != null);
+        return id;
     }
 }

@@ -3,8 +3,8 @@ package Services;
 import Config.ChatAppConfig;
 import Data.DataStorage;
 import Models.Gender;
-import Models.PasswordHash;
 import Models.User;
+import Ultilities.PasswordHash;
 
 import java.util.Date;
 import java.util.List;
@@ -13,6 +13,7 @@ import java.util.UUID;
 public class UserService {
     private List<User> userList;
     private DataStorage dataStorage;
+
     private ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
 
     public UserService(List<User> userList) {
@@ -29,8 +30,8 @@ public class UserService {
         return null;
     }
 
-    public boolean addNewUser(Gender gender, Date dob, String firstName, String lastName, String username, String password){
-        String id = UUID.randomUUID().toString();
+    public boolean register(Gender gender, Date dob, String firstName, String lastName, String username, String password){
+        String id = generateUserID();
         String salt = PasswordHash.getSalt();
         password = PasswordHash.getSHA256Password(password, salt);
         User user = new User(id, gender,dob, firstName, lastName, username, password, salt);
@@ -54,5 +55,13 @@ public class UserService {
             }
         }
         return false;
+    }
+
+    public String generateUserID() {
+        String id;
+        do {
+            id = UUID.randomUUID().toString();
+        } while (findUserByID(id) != null);
+        return id;
     }
 }

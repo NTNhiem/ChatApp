@@ -31,7 +31,6 @@ public class DataStorage {
         return DSInstance;
     }
 
-
     public void saveListUserAsByte(ArrayList<User> userArrayList) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
@@ -143,7 +142,7 @@ public class DataStorage {
         ObjectInputStream ois = null;
         ArrayList<Message> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(messPath);
+            fis = new FileInputStream(convPath);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<Message>) ois.readObject();
         } catch (Exception ex) {

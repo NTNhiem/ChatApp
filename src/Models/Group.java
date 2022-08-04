@@ -1,7 +1,9 @@
 package Models;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Group {
 	private String id;
@@ -10,6 +12,8 @@ public class Group {
 	private boolean isPrivate;
 	private List<User> members;
 
+	private String inviteCode;
+
 
 	public Group(String id, String name, boolean isPrivate) {
 		this.id = id;
@@ -17,6 +21,23 @@ public class Group {
 		this.isPrivate = isPrivate;
 		this.admin = new ArrayList<>();
 		this.members = new ArrayList<>();
+		this.inviteCode = generateInviteCode();
+	}
+
+	private String generateInviteCode() {
+		char[] chars = "abcdefghijklmnopqrstuvwxyz1234567890".toCharArray();
+		StringBuilder code = new StringBuilder();
+		Random random = new SecureRandom();
+		for (int i = 0; i < 6; i++) {
+			char c = chars[random.nextInt(chars.length)];
+			code.append(c);
+		}
+		code.append(this.id);
+		return code.toString();
+	}
+
+	public String getInviteCode() {
+		return inviteCode;
 	}
 
 	public String getId() {

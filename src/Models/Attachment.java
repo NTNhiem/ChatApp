@@ -1,22 +1,15 @@
 package Models;
 
-public class Attachment {
-    private String id;
+import java.util.Date;
+
+public class Attachment extends Message{
     private String directory;
     private AttachmentType type;
 
-    public Attachment(String id, String directory, AttachmentType type) {
-        this.id = id;
+    public Attachment(int id, Date sendDate, User sender, MessageStatus status, String directory, AttachmentType type) {
+        super(id, sendDate, sender,status);
         this.directory = directory;
         this.type = type;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getDirectory() {

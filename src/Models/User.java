@@ -13,11 +13,11 @@ public class User {
     private String fullName;
     private String username;
     private String password;
-
     private String salt;
     private List<Group> groups;
     private Map<String, User> friends;
     private List<Relationship> relationships;
+    private List<Conversation> conversations;
 
     public User(String id, Gender gender, Date dob, String firstName, String lastName, String username, String password, String salt) {
         this.id = id;
@@ -32,6 +32,7 @@ public class User {
         this.groups = new ArrayList<>();
         this.friends = new HashMap<>();
         this.relationships = new ArrayList<>();
+        this.conversations = new ArrayList<>();
     }
 
     public List<Group> getGroups() {
@@ -126,5 +127,29 @@ public class User {
 
     public void setSalt(String salt) {
         this.salt = salt;
+    }
+
+    public List<ConversationGroup> getConversationsGroupList() {
+        List<ConversationGroup> returnList = new ArrayList<>();
+        for (Conversation conversation : conversations) {
+            if (conversation instanceof ConversationGroup) {
+                returnList.add((ConversationGroup) conversation);
+            }
+        }
+        return returnList;
+    }
+
+    public void setConversations(List<Conversation> conversations) {
+        this.conversations = conversations;
+    }
+
+    public List<ConversationSingle> getConversationSingleList() {
+        List<ConversationSingle> returnList = new ArrayList<>();
+        for (Conversation conversation : conversations) {
+            if (conversation instanceof ConversationSingle) {
+                returnList.add((ConversationSingle) conversation);
+            }
+        }
+        return returnList;
     }
 }
