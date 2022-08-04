@@ -13,11 +13,13 @@ public class User {
     private String fullName;
     private String username;
     private String password;
+
+    private String salt;
     private List<Group> groups;
     private Map<String, User> friends;
     private List<Relationship> relationships;
 
-    public User(String id, Gender gender, Date dob, String firstName, String lastName, String username, String password) {
+    public User(String id, Gender gender, Date dob, String firstName, String lastName, String username, String password, String salt) {
         this.id = id;
         this.gender = gender;
         this.dob = dob;
@@ -26,6 +28,7 @@ public class User {
         this.fullName = lastName + " " + firstName;
         this.username = username;
         this.password = password;
+        this.salt = salt;
         this.groups = new ArrayList<>();
         this.friends = new HashMap<>();
         this.relationships = new ArrayList<>();

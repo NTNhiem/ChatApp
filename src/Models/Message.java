@@ -8,10 +8,10 @@ public class Message {
 	private String content;
 	private Date sendDate;
 	private User sender ;
-	private User receiver;
+	private List<User> receiver;
 	private Group group;
     
-	public Message(int id, String content, Date sendDate, User sender, User receiver, Group group,
+	public Message(int id, String content, Date sendDate, User sender, List<User> receiver, Group group,
 			List<MessageAttachment> attachments) {
 		super();
 		this.id = id;
@@ -54,11 +54,11 @@ public class Message {
 		this.sender = sender;
 	}
 
-	public User getReceiver() {
+	public List<User> getReceiver() {
 		return receiver;
 	}
 
-	public void setReceiver(User receiver) {
+	public void setReceiver(List<User> receiver) {
 		this.receiver = receiver;
 	}
 

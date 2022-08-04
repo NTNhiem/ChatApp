@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="545f469d-bb0b-487a-ad61-1cc8a9d6746c" name="Changes" comment="Modified some config method">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_12_51_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_12_51_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/GroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
+    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PasswordHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
     </list>
-    <list id="c9e56e4a-bf94-4802-bfc2-82ef401c8441" name="Changes by Dell" comment="Small changes to user and group class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,14 +64,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="545f469d-bb0b-487a-ad61-1cc8a9d6746c" name="Changes" comment="Modified some config method" />
+      <changelist id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="" />
       <created>1657786292999</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657786292999</updated>
       <workItem from="1657786294563" duration="331000" />
       <workItem from="1658382255405" duration="3157000" />
-      <workItem from="1659592055236" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1657786546034</created>
@@ -90,42 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658987283743</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added new config type">
-      <created>1658991953727</created>
+    <task id="LOCAL-00003" summary="datastorage">
+      <created>1658991782441</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1658991953727</updated>
+      <updated>1658991782441</updated>
     </task>
-    <task id="LOCAL-00004" summary="Added relationship and new methods">
-      <created>1658996853708</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1658996853708</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added Fullname and RelationshipStatus">
-      <created>1658996892512</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1658996892512</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Modified some config method">
-      <created>1659000235682</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1659000235682</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Small changes to user and group class">
-      <created>1659000286042</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1659000286042</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,15 +112,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <MESSAGE value="Added new config type" />
-    <MESSAGE value="Added relationship and new methods" />
-    <MESSAGE value="Added Fullname and RelationshipStatus" />
-    <MESSAGE value="Modified some config method" />
-    <MESSAGE value="Small changes to user and group class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small changes to user and group class" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="datastorage" />
+    <option name="LAST_COMMIT_MESSAGE" value="datastorage" />
   </component>
 </project>

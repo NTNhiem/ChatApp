@@ -5,10 +5,9 @@ import java.security.SecureRandom;
 
 public class PasswordHash {
 
-    public static String getSHA256Password(String passwordToHash) {
+    public static String getSHA256Password(String passwordToHash, String salt) {
         String generatedPassword = null;
         try {
-            String salt = getSalt();
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(salt.getBytes());
             byte[] bytes = md.digest(passwordToHash.getBytes());
@@ -24,7 +23,7 @@ public class PasswordHash {
         return generatedPassword;
     }
 
-    private static String getSalt() throws NoSuchAlgorithmException {
+    public static String getSalt() throws NoSuchAlgorithmException {
         SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
         byte[] salt = new byte[16];
         sr.nextBytes(salt);
