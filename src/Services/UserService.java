@@ -6,9 +6,8 @@ import Models.Gender;
 import Models.User;
 import Ultilities.PasswordHash;
 
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+
 
 public class UserService {
     private List<User> userList;

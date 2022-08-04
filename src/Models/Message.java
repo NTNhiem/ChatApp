@@ -4,7 +4,6 @@ import java.util.Date;
 
 public abstract class Message {
 	private int id ;
-	private String content;
 	private Date sendDate;
 	private User sender;
 
@@ -26,14 +25,6 @@ public abstract class Message {
 		this.id = id;
 	}
 
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
 	public Date getSendDate() {
 		return sendDate;
 	}
@@ -50,19 +41,11 @@ public abstract class Message {
 		this.sender = sender;
 	}
 
-	public List<User> getReceiver() {
-		return receiver;
+	public MessageStatus getStatus() {
+		return status;
 	}
 
-	public void setReceiver(List<User> receiver) {
-		this.receiver = receiver;
-	}
-
-	public Group getGroup() {
-		return group;
-	}
-
-	public void setGroup(Group group) {
-		this.group = group;
+	public void setStatus(MessageStatus status) {
+		this.status = status;
 	}
 }

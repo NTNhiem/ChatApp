@@ -4,9 +4,9 @@ import Data.DataStorage;
 import Models.Group;
 import Models.User;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.security.SecureRandom;
+import java.util.*;
+
 
 public class GroupService {
     private List<Group> groupList;
@@ -36,7 +36,7 @@ public class GroupService {
     }
 
     public void createGroup(String name, boolean isPrivate, User creator) {
-        String id = UUID.randomUUID().toString();
+        String id = generateGroupID();
         Group g = new Group(id, name, isPrivate);
         List<User> admins = new ArrayList<>();
         admins.add(creator);

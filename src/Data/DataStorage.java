@@ -1,8 +1,8 @@
 package Data;
 
 import Config.ChatAppConfig;
+import Models.Conversation;
 import Models.Group;
-import Models.Message;
 import Models.User;
 
 import java.io.*;
@@ -18,8 +18,7 @@ public class DataStorage {
 
     private final String groupPath = chatAppConfig.getStringProperty("groupPath");
 
-    private final String messPath = chatAppConfig.getStringProperty("messPath");
-
+    private final String convPath = chatAppConfig.getStringProperty("convPath");
 
     protected DataStorage() {
     }
@@ -116,14 +115,14 @@ public class DataStorage {
     }
 
 
-    public void saveListMessAsByte(ArrayList<Message> messageArrayList) {
+    public void saveListConvAsByte(ArrayList<Conversation> conversationArrayList) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(userPath);
+            fos = new FileOutputStream(convPath);
             oos = new ObjectOutputStream(fos);
 
-            oos.writeObject(messageArrayList);
+            oos.writeObject(conversationArrayList);
             oos.flush();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -137,14 +136,14 @@ public class DataStorage {
         }
     }
 
-    public ArrayList<Message> readListMessAsByte() {
+    public ArrayList<Conversation> readListConvAsByte() {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
-        ArrayList<Message> list = new ArrayList<>();
+        ArrayList<Conversation> list = new ArrayList<>();
         try {
             fis = new FileInputStream(convPath);
             ois = new ObjectInputStream(fis);
-            list = (ArrayList<Message>) ois.readObject();
+            list = (ArrayList<Conversation>) ois.readObject();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
