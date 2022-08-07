@@ -2,6 +2,7 @@ package Services;
 
 import Config.ChatAppConfig;
 import Data.DataStorage;
+import Models.Conversation;
 import Models.Gender;
 import Models.User;
 import Ultilities.PasswordHash;
@@ -12,8 +13,7 @@ import java.util.*;
 public class UserService {
     private List<User> userList;
     private DataStorage dataStorage;
-
-    private ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
+    private final ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
 
     public UserService() {
         this.dataStorage = DataStorage.getInstance();

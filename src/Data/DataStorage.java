@@ -22,12 +22,23 @@ public class DataStorage {
 
     private final String convPath = chatAppConfig.getStringProperty("convPath");
 
+    private String attachmentPath = chatAppConfig.getStringProperty("attachmentPath");
+
+
     protected DataStorage() {
         this.createDataFolder();
-
+        this.createAttachmentFolder();
     }
+
     public void createDataFolder() {
         File dataFolder = new File(dataPath);
+        if (!dataFolder.exists()) {
+            dataFolder.mkdirs();
+        }
+    }
+
+    public void createAttachmentFolder() {
+        File dataFolder = new File(attachmentPath);
         if (!dataFolder.exists()) {
             dataFolder.mkdirs();
         }
@@ -45,7 +56,7 @@ public class DataStorage {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(userPath);
+            fos = new FileOutputStream(dataPath + "\\" + userPath);
             oos = new ObjectOutputStream(fos);
 
             oos.writeObject(userArrayList);
@@ -67,7 +78,7 @@ public class DataStorage {
         ObjectInputStream ois = null;
         ArrayList<User> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(userPath);
+            fis = new FileInputStream(dataPath + "\\" + userPath);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<User>) ois.readObject();
         } catch (Exception ex) {
@@ -87,7 +98,7 @@ public class DataStorage {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(groupPath);
+            fos = new FileOutputStream(dataPath + "\\" + groupPath);
             oos = new ObjectOutputStream(fos);
 
             oos.writeObject(groupArrayList);
@@ -109,7 +120,7 @@ public class DataStorage {
         ObjectInputStream ois = null;
         ArrayList<Group> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(groupPath);
+            fis = new FileInputStream(dataPath + "\\" + groupPath);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<Group>) ois.readObject();
         } catch (Exception ex) {
@@ -130,7 +141,7 @@ public class DataStorage {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = new FileOutputStream(convPath);
+            fos = new FileOutputStream(dataPath + "\\" + convPath);
             oos = new ObjectOutputStream(fos);
 
             oos.writeObject(conversationArrayList);
@@ -152,7 +163,7 @@ public class DataStorage {
         ObjectInputStream ois = null;
         ArrayList<Conversation> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(convPath);
+            fis = new FileInputStream(dataPath + "\\" + convPath);
             ois = new ObjectInputStream(fis);
             list = (ArrayList<Conversation>) ois.readObject();
         } catch (Exception ex) {
@@ -166,5 +177,35 @@ public class DataStorage {
             }
         }
         return list;
+    }
+
+    public void saveAttachmentAsByte(String directory, int id) {
+        File src = new File(directory);
+        File dest = new File(attachmentPath + "\\" + id);
+        copyFileUsingStream(src, dest);
+    }
+
+    private void copyFileUsingStream(File source, File dest) {
+//        try (InputStream is = new FileInputStream(source); OutputStream os = new FileOutputStream(dest)) {
+//            byte[] buffer = new byte[1024];
+//            int length;
+//            while ((length = is.read(buffer)) > 0) {
+//                os.write(buffer, 0, length);
+//            }
+//        }
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        int i = 0;
+        try {
+            fis = new FileInputStream(source);
+            fos = new FileOutputStream(dest);
+            while ((i = fis.read()) != -1) {
+                fos.write(i);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+
     }
 }

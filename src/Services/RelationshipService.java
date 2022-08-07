@@ -7,6 +7,9 @@ import Models.*;
 import java.util.*;
 
 public class RelationshipService {
+    private List<Conversation> conversationList;
+    private DataStorage dataStorage;
+    private final ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
 
     public RelationshipService() {
     }

@@ -142,6 +142,10 @@ public class User {
         this.relationships.put(relationship.getRelationshipId(), relationship);
     }
 
+    public void addNewAlias(String username , String alias) {
+        this.friendsAlias.put(username,alias);
+    }
+
     public String getSalt() {
         return salt;
     }

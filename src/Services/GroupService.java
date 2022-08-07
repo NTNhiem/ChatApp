@@ -1,5 +1,6 @@
 package Services;
 
+import Config.ChatAppConfig;
 import Data.DataStorage;
 import Models.Conversation;
 import Models.Group;
@@ -12,6 +13,7 @@ import java.util.*;
 public class GroupService {
     private List<Group> groupList;
     private DataStorage dataStorage;
+    private final ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
 
     public GroupService() {
         this.dataStorage = DataStorage.getInstance();
