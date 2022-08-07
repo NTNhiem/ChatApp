@@ -1,23 +1,23 @@
 package Models;
 
 public class Relationship {
-    private int relationshipId;
+    private String relationshipId;
     private String invitedUserId;
     private String invitingUserId;
     private RelationshipStatus status;
 
-    public Relationship(int relationshipId, String invitedUserId, String invitingUserId, RelationshipStatus status) {
+    public Relationship(String relationshipId, String invitedUserId, String invitingUserId, RelationshipStatus status) {
         this.relationshipId = relationshipId;
         this.invitedUserId = invitedUserId;
         this.invitingUserId = invitingUserId;
         this.status = status;
     }
 
-    public int getRelationshipId() {
+    public String getRelationshipId() {
         return relationshipId;
     }
 
-    public void setRelationshipId(int relationshipId) {
+    public void setRelationshipId(String relationshipId) {
         this.relationshipId = relationshipId;
     }
 

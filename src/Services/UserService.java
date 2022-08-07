@@ -15,7 +15,7 @@ public class UserService {
 
     private ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
 
-    public UserService(List<User> userList) {
+    public UserService() {
         this.dataStorage = DataStorage.getInstance();
         this.userList = this.dataStorage.readListUserAsByte();
     }

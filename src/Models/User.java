@@ -121,6 +121,10 @@ public class User {
         this.relationships = relationships;
     }
 
+    public void addNewRelationship(Relationship relationship) {
+        this.relationships.add(relationship);
+    }
+
     public String getSalt() {
         return salt;
     }
