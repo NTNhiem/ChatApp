@@ -6,8 +6,8 @@ public class Attachment extends Message{
     private String directory;
     private AttachmentType type;
 
-    public Attachment(int id, Date sendDate, User sender, MessageStatus status, String directory, AttachmentType type) {
-        super(id, sendDate, sender,status);
+    public Attachment(Date sendDate, User sender, MessageStatus status, String directory, AttachmentType type) {
+        super(sendDate, sender,status);
         this.directory = directory;
         this.type = type;
     }

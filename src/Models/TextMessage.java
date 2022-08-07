@@ -6,8 +6,8 @@ public class TextMessage extends Message {
 
     private String content;
 
-    public TextMessage(int id, String content, Date sendDate, User sender, MessageStatus status) {
-        super(id, sendDate, sender, status);
+    public TextMessage(String content, Date sendDate, User sender, MessageStatus status) {
+        super(sendDate, sender, status);
         this.content = content;
     }
 

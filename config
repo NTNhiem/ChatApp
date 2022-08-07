@@ -1,6 +1,9 @@
 userPath=UserData_Backup
 groupPath=GroupData_Backup
 convPath=ConvData_Backup
+dataPath=Data
+attachmentPath=Attachment
+
 CODE_SENT_FRIEND_REQUEST=6
 CODE_DECLINE_FRIEND_REQUEST=8
 CODE_ACCEPT_FRIEND_REQUEST=69

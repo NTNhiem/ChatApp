@@ -4,6 +4,7 @@ import Data.DataStorage;
 import Models.*;
 
 import java.util.*;
+import java.io.*
 
 public class ConversationService {
     private List<Conversation> conversationList;
@@ -73,5 +74,29 @@ public class ConversationService {
     }
 
 
+    public boolean sendTextMessage(String text, Conversation conversation, User sender) {
+        Calendar cal = Calendar.getInstance();
+        text = text.trim();
+        if (text.equals("")) {
+            return false;
+        }
+        TextMessage textMessage = new TextMessage(text, cal.getTime(), sender, MessageStatus.Sent);
+        return true;
+    }
+
+    public boolean sendAttachment(String directory, Conversation conversation, User sender) {
+        Calendar cal = Calendar.getInstance();
+        File = new Fi
+        String type = getFileExtension(directory);
+
+        Attachment attachment = new Attachment(cal.getTime(), sender, MessageStatus.Sent, directory, AttachmentType.);
+        return false;
+    }
+
+    public static String getFileExtension(String fullName) {
+        String fileName = new File(fullName).getName();
+        int dotIndex = fileName.lastIndexOf('.');
+        return (dotIndex == -1) ? "" : fileName.substring(dotIndex + 1);
+    }
 
 }

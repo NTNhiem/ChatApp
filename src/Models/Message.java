@@ -1,17 +1,20 @@
 package Models;
 
-import java.util.Date;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
 
 public abstract class Message {
+	private static final AtomicInteger count = new AtomicInteger(0);
 	private int id ;
 	private Date sendDate;
 	private User sender;
 
 	private MessageStatus status;
     
-	public Message(int id, Date sendDate, User sender, MessageStatus status) {
+	public Message(Date sendDate, User sender, MessageStatus status) {
 		super();
-		this.id = id;
+		this.id = count.incrementAndGet();
 		this.sendDate = sendDate;
 		this.sender = sender;
 		this.status = status;

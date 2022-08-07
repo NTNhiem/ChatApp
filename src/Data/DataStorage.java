@@ -14,6 +14,8 @@ public class DataStorage {
 
     private final ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
 
+    private String dataPath = chatAppConfig.getStringProperty("datapath");
+
     private final String userPath = chatAppConfig.getStringProperty("userPath");
 
     private final String groupPath = chatAppConfig.getStringProperty("groupPath");
@@ -21,7 +23,16 @@ public class DataStorage {
     private final String convPath = chatAppConfig.getStringProperty("convPath");
 
     protected DataStorage() {
+        this.createDataFolder();
+
     }
+    public void createDataFolder() {
+        File dataFolder = new File(dataPath);
+        if (!dataFolder.exists()) {
+            dataFolder.mkdirs();
+        }
+    }
+
 
     public static DataStorage getInstance() {
         if (DSInstance == null) {
