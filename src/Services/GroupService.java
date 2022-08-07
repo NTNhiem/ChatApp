@@ -17,7 +17,7 @@ public class GroupService {
 
     public GroupService() {
         this.dataStorage = DataStorage.getInstance();
-        this.groupList = this.dataStorage.readListGroupAsByte();
+        this.groupList = this.dataStorage.readGroupList();
     }
 
     public Group findGroupById(String id) {
@@ -57,18 +57,13 @@ public class GroupService {
         admins.add(creator);
         creator.addGroup(group);
         group.setAdmin(admins);
+        this.groupList.add(group);
     }
 
     public boolean joinGroupByCode(String inviteCode, User invitedUser) {
         Group group = findGroupByInviteCode(inviteCode);
         if (!group.isPrivate()) {
-            List<User> members = group.getMembers();
-            if (!members.contains(invitedUser)) {
-                members.add(invitedUser);
-                invitedUser.addGroup(group);
-                group.setMembers(members);
-                return true;
-            }
+            return joinGroupByInvitation(group, invitedUser);
         }
         return false;
     }
@@ -79,6 +74,7 @@ public class GroupService {
             members.add(invitedUser);
             invitedUser.addGroup(group);
             group.setMembers(members);
+            updateGroup(group);
             return true;
         }
         return false;
@@ -115,12 +111,25 @@ public class GroupService {
                 adminList.remove(admin);
                 adminList.add(memberList.get(0));
                 group.setAdmin(adminList);
-                return true;
+                status = true;
             }
         }
-
-        return false;
+        updateGroup(group);
+        return status;
     }
 
+    public void updateGroup(Group groupToUpdate) {
+        String groupToUpdateId = groupToUpdate.getId();
+        for (Group group : this.groupList) {
+            if (group.getId().equals(groupToUpdateId)) {
+                this.groupList.remove(group);
+                this.groupList.add(groupToUpdate);
+                return;
+            }
+        }
+    }
 
+    public void saveGroupData() {
+        this.dataStorage.saveGroupList(this.groupList);
+    }
 }

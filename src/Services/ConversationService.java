@@ -15,10 +15,10 @@ public class ConversationService {
 
     public ConversationService() {
         this.dataStorage = DataStorage.getInstance();
-        this.conversationList = this.dataStorage.readListConvAsByte();
+        this.conversationList = this.dataStorage.readConversationList();
     }
 
-    public Conversation getConversationSingle(User currentUser, User friend) {
+    public ConversationSingle getConversationSingle(User currentUser, User friend) {
         List<ConversationSingle> conversationSingleList = currentUser.getConversationSingleList();
         ConversationSingle returnConversation = null;
         boolean isExisted = false;
@@ -37,12 +37,13 @@ public class ConversationService {
             member.add(currentUser);
             member.add(friend);
             returnConversation = new ConversationSingle(id, member);
+            this.conversationList.add(returnConversation);
         }
         return returnConversation;
 
     }
 
-    public Conversation getConversationGroup(User currentUser, Group group) {
+    public ConversationGroup getConversationGroup(User currentUser, Group group) {
         List<ConversationGroup> conversationGroupList = currentUser.getConversationsGroupList();
         ConversationGroup returnConversation = null;
         boolean isExisted = false;
@@ -55,13 +56,12 @@ public class ConversationService {
                 }
 
         }
-
         if (!isExisted) {
             String id = generateConversationID();
             returnConversation = new ConversationGroup(id, group);
+            this.conversationList.add(returnConversation);
         }
         return returnConversation;
-
     }
 
     public Conversation findConversationByID(String id) {
@@ -108,6 +108,7 @@ public class ConversationService {
         }
         TextMessage textMessage = new TextMessage(text, cal.getTime(), sender, MessageStatus.Sent);
         conversation.addMessage(textMessage);
+        updateConversationInList(conversation);
         return true;
     }
 
@@ -146,6 +147,7 @@ public class ConversationService {
         }
         Attachment attachment = new Attachment(cal.getTime(), sender, MessageStatus.Sent, directory, attachmentType);
         conversation.addMessage(attachment);
+        updateConversationInList(conversation);
         return false;
     }
 
@@ -166,5 +168,20 @@ public class ConversationService {
             returnMessageList.add(chatLog.get(i));
         }
         return returnMessageList;
+    }
+
+    public void updateConversationInList(Conversation conversationToUpdate) {
+        String conversationToUpdateId = conversationToUpdate.getId();
+        for (Conversation conversation : this.conversationList) {
+            if (conversation.getId().equals(conversationToUpdateId)) {
+                this.conversationList.remove(conversation);
+                this.conversationList.add(conversationToUpdate);
+                return;
+            }
+        }
+    }
+
+    public void saveConversationData() {
+        this.dataStorage.saveConversationList(this.conversationList);
     }
 }

@@ -14,7 +14,7 @@ public class DataStorage {
 
     private final ChatAppConfig chatAppConfig = ChatAppConfig.getConfigInstance();
 
-    private String dataPath = chatAppConfig.getStringProperty("datapath");
+    private final String dataPath = chatAppConfig.getStringProperty("dataPath");
 
     private final String userPath = chatAppConfig.getStringProperty("userPath");
 
@@ -22,7 +22,7 @@ public class DataStorage {
 
     private final String convPath = chatAppConfig.getStringProperty("convPath");
 
-    private String attachmentPath = chatAppConfig.getStringProperty("attachmentPath");
+    private final String attachmentPath = chatAppConfig.getStringProperty("attachmentPath");
 
 
     protected DataStorage() {
@@ -52,7 +52,7 @@ public class DataStorage {
         return DSInstance;
     }
 
-    public void saveListUserAsByte(ArrayList<User> userArrayList) {
+    public void saveUserList(List<User> userArrayList) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
@@ -65,28 +65,36 @@ public class DataStorage {
             System.out.println(ex.getMessage());
         } finally {
             try {
-                fos.close();
-                oos.close();
+                if (fos != null && oos != null) {
+                    fos.close();
+                    oos.close();
+                }
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
         }
     }
 
-    public ArrayList<User> readListUserAsByte() {
+    public ArrayList<User> readUserList() {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         ArrayList<User> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(dataPath + "\\" + userPath);
-            ois = new ObjectInputStream(fis);
-            list = (ArrayList<User>) ois.readObject();
+            if (checkPathExists(dataPath + "\\" + userPath)) {
+                fis = new FileInputStream(dataPath + "\\" + userPath);
+                ois = new ObjectInputStream(fis);
+                list = (ArrayList<User>) ois.readObject();
+            } else {
+                return list;
+            }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
-                fis.close();
-                ois.close();
+                if (fis != null && ois != null) {
+                    fis.close();
+                    ois.close();
+                }
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
@@ -94,7 +102,7 @@ public class DataStorage {
         return list;
     }
 
-    public void saveListGroupAsByte(ArrayList<Group> groupArrayList) {
+    public void saveGroupList(List<Group> groupArrayList) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
@@ -107,28 +115,36 @@ public class DataStorage {
             System.out.println(ex.getMessage());
         } finally {
             try {
-                fos.close();
-                oos.close();
+                if (fos != null && oos != null) {
+                    fos.close();
+                    oos.close();
+                }
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
         }
     }
 
-    public ArrayList<Group> readListGroupAsByte() {
+    public List<Group> readGroupList() {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         ArrayList<Group> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(dataPath + "\\" + groupPath);
-            ois = new ObjectInputStream(fis);
-            list = (ArrayList<Group>) ois.readObject();
+            if (checkPathExists(dataPath + "\\" + groupPath)) {
+                fis = new FileInputStream(dataPath + "\\" + groupPath);
+                ois = new ObjectInputStream(fis);
+                list = (ArrayList<Group>) ois.readObject();
+            } else {
+                return list;
+            }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
-                fis.close();
-                ois.close();
+                if (fis != null && ois != null) {
+                    fis.close();
+                    ois.close();
+                }
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
@@ -137,49 +153,58 @@ public class DataStorage {
     }
 
 
-    public void saveListConvAsByte(ArrayList<Conversation> conversationArrayList) {
+    public void saveConversationList(List<Conversation> conversationList) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
             fos = new FileOutputStream(dataPath + "\\" + convPath);
             oos = new ObjectOutputStream(fos);
 
-            oos.writeObject(conversationArrayList);
+            oos.writeObject(conversationList);
             oos.flush();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
-                fos.close();
-                oos.close();
+                if (fos != null && oos != null) {
+                    fos.close();
+                    oos.close();
+                }
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
         }
     }
 
-    public ArrayList<Conversation> readListConvAsByte() {
+    public List<Conversation> readConversationList() {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         ArrayList<Conversation> list = new ArrayList<>();
         try {
-            fis = new FileInputStream(dataPath + "\\" + convPath);
-            ois = new ObjectInputStream(fis);
-            list = (ArrayList<Conversation>) ois.readObject();
+            if (checkPathExists(dataPath + "\\" + userPath)) {
+                fis = new FileInputStream(dataPath + "\\" + convPath);
+                ois = new ObjectInputStream(fis);
+                list = (ArrayList<Conversation>) ois.readObject();
+            } else {
+                return list;
+            }
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
-                fis.close();
-                ois.close();
-            } catch (IOException ex) {
+                if (fis != null && ois != null) {
+                    fis.close();
+                    ois.close();
+                }
+            } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
         }
         return list;
     }
 
-    public void saveAttachmentAsByte(String directory, int id) {
+    public void saveAttachment(String directory, int id) {
         File src = new File(directory);
         File dest = new File(attachmentPath + "\\" + id);
         copyFileUsingStream(src, dest);
@@ -205,7 +230,10 @@ public class DataStorage {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+    }
 
-
+    private boolean checkPathExists(String path) {
+        File file = new File(path);
+        return file.exists();
     }
 }

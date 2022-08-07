@@ -4,32 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="small changes">
-      <change afterPath="$PROJECT_DIR$/src/Models/ConversationGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/TextMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/ConversationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_21_2022_2_31_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_21_2022_2_31_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_21_2022_3_23_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_21_2022_3_23_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_4_2022_1_02_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_4_2022_1_02_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="Adding user relationship methods">
+      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Services/ConversationServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TestInitilization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/DataStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Attachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Attachment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/RelationshipStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/RelationshipStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ConversationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ConversationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
     </list>
-    <list id="da144c96-61fb-40ed-b558-f6dd3310cdda" name="Changes by Dell" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Models/ConversationSingle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config" beforeDir="false" afterPath="$PROJECT_DIR$/config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/DataStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Conversation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/GroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
+    <list id="0fb53b5b-ccc3-4106-9789-be253e08e409" name="Changes by ASUS" comment="" />
+    <list id="da144c96-61fb-40ed-b558-f6dd3310cdda" name="Changes by Dell" comment="Some changes to conversation methods">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml" beforeDir="false" />
     </list>
     <list id="c9b5e2a5-caa0-46d1-a137-1205d4384fb4" name="Changes by Tieng" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,59 +38,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Services/GroupService.java">
-      <ranges>
-        <range start1="6" end1="9" start2="6" end2="9" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="29" end1="30" start2="29" end2="30" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="48" end1="48" start2="48" end2="66" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Models/Message.java">
-      <ranges>
-        <range start1="3" end1="4" start2="3" end2="3" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="5" end1="6" start2="4" end2="5" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="7" end1="8" start2="6" end2="6" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="10" end1="15" start2="8" end2="12" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="17" end1="18" start2="14" end2="14" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="20" end1="22" start2="16" end2="17" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="31" end1="39" start2="26" end2="26" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="56" end1="66" start2="43" end2="45" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="68" end1="70" start2="47" end2="49" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Services/UserService.java">
-      <ranges>
-        <range start1="5" end1="6" start2="5" end2="5" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="7" end1="7" start2="6" end2="7" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="8" end1="11" start2="8" end2="10" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="15" end1="15" start2="14" end2="15" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="31" end1="33" start2="31" end2="33" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="57" end1="57" start2="57" end2="65" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Data/DataStorage.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="4" end1="5" start2="5" end2="5" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="20" end1="22" start2="20" end2="21" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="33" end1="34" start2="32" end2="32" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="119" end1="120" start2="117" end2="118" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="123" end1="124" start2="121" end2="122" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="126" end1="127" start2="124" end2="125" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="140" end1="141" start2="138" end2="139" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="143" end1="144" start2="141" end2="142" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-        <range start1="145" end1="146" start2="143" end2="144" changelist="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" />
-        <range start1="147" end1="148" start2="145" end2="146" changelist="da144c96-61fb-40ed-b558-f6dd3310cdda" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -107,11 +59,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_opened_file_path": "D:/IntelliJ repos/ChatApp/src/Models",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -120,7 +78,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -130,6 +89,68 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IntelliJ repos\ChatApp\src\Models" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Services" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ConversationServiceTest">
+    <configuration name="ConversationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Services" />
+      <option name="MAIN_CLASS_NAME" value="Services.ConversationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConversationServiceTest.getConversationGroup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Services" />
+      <option name="MAIN_CLASS_NAME" value="Services.ConversationServiceTest" />
+      <option name="METHOD_NAME" value="getConversationGroup" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConversationServiceTest.testGetConversationSingle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Services" />
+      <option name="MAIN_CLASS_NAME" value="Services.ConversationServiceTest" />
+      <option name="METHOD_NAME" value="testGetConversationSingle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ConversationServiceTest" />
+        <item itemvalue="JUnit.ConversationServiceTest.getConversationGroup" />
+        <item itemvalue="JUnit.ConversationServiceTest.testGetConversationSingle" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -142,6 +163,12 @@
       <workItem from="1657786294563" duration="331000" />
       <workItem from="1658382255405" duration="3157000" />
       <workItem from="1659595504740" duration="1086000" />
+      <workItem from="1659616242914" duration="7000" />
+      <workItem from="1659834321558" duration="595000" />
+      <workItem from="1659838165261" duration="7465000" />
+      <workItem from="1659846129802" duration="853000" />
+      <workItem from="1659852617928" duration="19403000" />
+      <workItem from="1659878836811" duration="9567000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1657786546034</created>
@@ -192,7 +219,56 @@
       <option name="project" value="LOCAL" />
       <updated>1659595685248</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Major changes">
+      <created>1659605155035</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659605155035</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Split conversation to single and group and minor chnages">
+      <created>1659605220657</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659605220657</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add config path for conversation save">
+      <created>1659605257791</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1659605257791</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Adding user relationship methods">
+      <created>1659846292711</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659846292711</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add methods to send message and attachment">
+      <created>1659846387027</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659846387027</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Some changes to conversation methods">
+      <created>1659872507025</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659872507025</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Some changes to conversation methods">
+      <created>1659872540327</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659872540327</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,16 +286,40 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1" />
     <MESSAGE value="datastorage" />
     <MESSAGE value="change hash" />
     <MESSAGE value="small changes" />
     <MESSAGE value="Changes by Tieng" />
     <MESSAGE value="small change" />
-    <option name="LAST_COMMIT_MESSAGE" value="small change" />
+    <MESSAGE value="Major changes" />
+    <MESSAGE value="Split conversation to single and group" />
+    <MESSAGE value="Split conversation to single and group and minor chnages" />
+    <MESSAGE value="Add config path for conversation save" />
+    <MESSAGE value="Adding user relationship methods" />
+    <MESSAGE value="Add methods to send message and attachment" />
+    <MESSAGE value="Some changes to conversation methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some changes to conversation methods" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Data/DataStorage.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ChatApp$ConversationServiceTest.ic" NAME="ConversationServiceTest Coverage Results" MODIFIED="1659888263770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Services.*</FILTER>
+    </SUITE>
   </component>
 </project>

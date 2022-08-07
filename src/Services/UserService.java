@@ -2,7 +2,6 @@ package Services;
 
 import Config.ChatAppConfig;
 import Data.DataStorage;
-import Models.Conversation;
 import Models.Gender;
 import Models.User;
 import Ultilities.PasswordHash;
@@ -17,7 +16,7 @@ public class UserService {
 
     public UserService() {
         this.dataStorage = DataStorage.getInstance();
-        this.userList = this.dataStorage.readListUserAsByte();
+        this.userList = this.dataStorage.readUserList();
     }
 
     public User findUserByID(String id) {
@@ -79,6 +78,22 @@ public class UserService {
     public void SetAlias(String alias, User assignor, User assignee){
         alias = alias.trim();
         assignor.addNewAlias(assignee.getUsername(), alias);
+        updateUser(assignor);
+    }
+
+    public void updateUser(User userToUpdate) {
+        String userToUpdateId = userToUpdate.getId();
+        for (User user : this.userList) {
+            if (user.getId().equals(userToUpdateId)) {
+                this.userList.remove(user);
+                this.userList.add(userToUpdate);
+                return;
+            }
+        }
+    }
+
+    public void saveUserData() {
+        this.dataStorage.saveUserList(this.userList);
     }
 
 }
