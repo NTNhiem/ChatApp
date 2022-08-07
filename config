@@ -3,7 +3,10 @@ groupPath=GroupData_Backup
 convPath=ConvData_Backup
 dataPath=Data
 attachmentPath=Attachment
-
+audioType=mp3,flac,wav,mp4
+videoType=mp4,avi,mov
+imageType=jpeg,png
+documentType=doc,docx,ppt,pptx,xls,xlsx,txt,pdf
 CODE_SENT_FRIEND_REQUEST=6
 CODE_DECLINE_FRIEND_REQUEST=8
 CODE_ACCEPT_FRIEND_REQUEST=69

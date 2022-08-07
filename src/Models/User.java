@@ -10,13 +10,13 @@ public class User {
     private Date dob;
     private String firstName;
     private String lastName;
-    private String fullName;
     private String username;
     private String password;
     private String salt;
     private List<Group> groups;
     private Map<String, User> friends;
-    private List<Relationship> relationships;
+    private Map<String, String> friendsAlias;
+    private Map<String, Relationship> relationships;
     private List<Conversation> conversations;
 
     public User(String id, Gender gender, Date dob, String firstName, String lastName, String username, String password, String salt) {
@@ -25,14 +25,22 @@ public class User {
         this.dob = dob;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.fullName = lastName + " " + firstName;
         this.username = username;
         this.password = password;
         this.salt = salt;
         this.groups = new ArrayList<>();
         this.friends = new HashMap<>();
-        this.relationships = new ArrayList<>();
+        this.relationships = new HashMap<>();
         this.conversations = new ArrayList<>();
+        this.friendsAlias = new HashMap<>();
+    }
+
+    public Map<String, String> getFriendsAlias() {
+        return friendsAlias;
+    }
+
+    public void setFriendsAliasMap(Map<String, String> friendsWithAlias) {
+        this.friendsAlias = friendsWithAlias;
     }
 
     public List<Group> getGroups() {
@@ -41,6 +49,10 @@ public class User {
 
     public void setGroups(List<Group> groups) {
         this.groups = groups;
+    }
+
+    public void addGroup(Group group) {
+        this.groups.add(group);
     }
 
     public String getId() {
@@ -81,21 +93,14 @@ public class User {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-        setFullName();
     }
-
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-        setFullName();
     }
-
-    public String getFullName() {return fullName; }
-
-    public void setFullName() { this.fullName = firstName + lastName; }
 
     public String getPassword() {
         return password;
@@ -105,7 +110,11 @@ public class User {
         this.password = password;
     }
 
-    public Map<String, User> getFriends() {
+    public List<User> getFriendList() {
+        return (List<User>) friends.values();
+    }
+
+    public Map<String, User> getFriendMap() {
         return friends;
     }
 
@@ -113,16 +122,24 @@ public class User {
         this.friends = friends;
     }
 
-    public List<Relationship> getRelationships() {
+    public void addNewFriend(User friend) {
+        this.friends.put(friend.username, friend);
+    }
+
+    public Map<String, Relationship> getRelationshipMap() {
         return relationships;
     }
 
-    public void setRelationships(List<Relationship> relationships) {
+    public void setRelationshipMap(Map<String, Relationship> relationships) {
         this.relationships = relationships;
     }
 
+    public void setRelationship(Relationship relationship) {
+        this.relationships.put(relationship.getRelationshipId(), relationship);
+    }
+
     public void addNewRelationship(Relationship relationship) {
-        this.relationships.add(relationship);
+        this.relationships.put(relationship.getRelationshipId(), relationship);
     }
 
     public String getSalt() {

@@ -23,6 +23,8 @@ public class ConversationService {
             for (User user : conversationSingle.getMember()) {
                 if (user == friend) {
                     returnConversation = conversationSingle;
+                    isExisted = true;
+                    break;
                 }
             }
         }

@@ -20,7 +20,19 @@ public abstract class Conversation {
     }
 
     public List<Message> getChatLog() {
-        return chatLog;
+        List<Message> returnList = new ArrayList<>();
+        for (Message message : chatLog) {
+            if(message.getStatus() == MessageStatus.Deleted) {
+                returnList.add(new TextMessage("Message deleted"
+                        ,message.getSendDate()
+                        ,message.getSender()
+                        ,message.getStatus()));
+            } else {
+                returnList.add(message);
+            }
+        }
+        returnList.sort((a,b) -> b.getSendDate().compareTo(a.getSendDate()));
+        return returnList;
     }
 
     public void setChatLog(List<Message> chatLog) {
@@ -30,20 +42,32 @@ public abstract class Conversation {
     public List<TextMessage> getTextMessagesList() {
         List<TextMessage> returnList = new ArrayList<>();
         for (Message message : chatLog) {
-            if (message instanceof TextMessage) {
-                returnList.add((TextMessage) message);
+            if(message.getStatus() != MessageStatus.Deleted) {
+                if (message instanceof TextMessage) {
+                    returnList.add((TextMessage) message);
+                }
             }
         }
+        returnList.sort((a,b) -> b.getSendDate().compareTo(a.getSendDate()));
         return returnList;
     }
+
+
 
     public List<Attachment> getAttachmentList() {
         List<Attachment> returnList = new ArrayList<>();
         for (Message message : chatLog) {
-            if (message instanceof Attachment) {
-                returnList.add((Attachment) message);
-            }
+            if(message.getStatus() != MessageStatus.Deleted) {
+                if (message instanceof Attachment) {
+                    returnList.add((Attachment) message);
+                }            }
         }
+        returnList.sort((a,b) -> b.getSendDate().compareTo(a.getSendDate()));
+
         return returnList;
+    }
+
+    public void addMessage(Message m) {
+        this.chatLog.add(m);
     }
 }

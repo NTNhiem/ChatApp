@@ -29,6 +29,18 @@ public class UserService {
         return null;
     }
 
+    public List<User> findUserByUsername(String keyword) {
+        keyword = keyword.trim().toLowerCase();
+        List<User> filteredUser = new ArrayList<>();
+        for (User user : userList) {
+            String username = user.getUsername().toLowerCase();
+            if (username.contains(keyword) || username.startsWith(keyword)) {
+                filteredUser.add(user);
+            }
+        }
+        return filteredUser;
+    }
+
     public boolean register(Gender gender, Date dob, String firstName, String lastName, String username, String password){
         String id = generateUserID();
         String salt = PasswordHash.getSalt();
@@ -63,4 +75,10 @@ public class UserService {
         } while (findUserByID(id) != null);
         return id;
     }
+
+    public void SetAlias(String alias, User assignor, User assignee){
+        alias = alias.trim();
+        assignor.addNewAlias(assignee.getUsername(), alias);
+    }
+
 }
