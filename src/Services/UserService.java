@@ -46,7 +46,7 @@ public class UserService {
         User user = new User(id, gender,dob, firstName, lastName, username, password, salt);
         User tempUser = this.findUserByID(user.getId());
         List<User> foundUsers = findUserByUsername(username);
-        if (tempUser == null && userList.isEmpty()) {
+        if (tempUser == null && foundUsers.isEmpty()) {
             this.userList.add(user);
             this.dataStorage.saveUserList(this.userList);
             return true;
@@ -76,7 +76,7 @@ public class UserService {
         return id;
     }
 
-    public void SetAlias(String alias, User assignor, User assignee){
+    public void setAlias(String alias, User assignor, User assignee){
         alias = alias.trim();
         assignor.addNewAlias(assignee.getUsername(), alias);
     }

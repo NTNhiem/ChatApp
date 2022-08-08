@@ -62,9 +62,9 @@ public class GroupService {
 
     public boolean joinGroupByCode(String inviteCode, User invitedUser) {
         Group group = findGroupByInviteCode(inviteCode);
-        if (!group.isPrivate()) {
-            return joinGroupByInvitation(group, invitedUser);
-        }
+            if (!group.isPrivate()) {
+                return joinGroupByInvitation(group, invitedUser);
+            }
         return false;
     }
 
