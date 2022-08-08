@@ -27,7 +27,7 @@ public abstract class Conversation {
                 returnList.add(message);
             }
         }
-        returnList.sort((a,b) -> b.getSendDate().compareTo(a.getSendDate()));
+        returnList.sort(Comparator.comparing(Message::getSendDate));
         return returnList;
     }
 

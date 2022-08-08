@@ -74,7 +74,6 @@ public class GroupService {
             members.add(invitedUser);
             invitedUser.addGroup(group);
             group.setMembers(members);
-            updateGroup(group);
             return true;
         }
         return false;
@@ -114,19 +113,7 @@ public class GroupService {
                 status = true;
             }
         }
-        updateGroup(group);
         return status;
-    }
-
-    public void updateGroup(Group groupToUpdate) {
-        String groupToUpdateId = groupToUpdate.getId();
-        for (Group group : this.groupList) {
-            if (group.getId().equals(groupToUpdateId)) {
-                this.groupList.remove(group);
-                this.groupList.add(groupToUpdate);
-                return;
-            }
-        }
     }
 
     public void saveGroupData() {

@@ -89,8 +89,6 @@ public class ConversationService {
         return textMessageList;
     }
 
-    find
-
     public String generateConversationID() {
         String id;
         do {
@@ -111,11 +109,10 @@ public class ConversationService {
         }
         TextMessage textMessage = new TextMessage(text, cal.getTime(), sender, MessageStatus.Sent);
         conversation.addMessage(textMessage);
-        updateConversationInList(conversation);
         return true;
     }
 
-    public boolean sendAttachment   (String directory, Conversation conversation, User sender) {
+    public boolean sendAttachment (String directory, Conversation conversation, User sender) {
         Calendar cal = Calendar.getInstance();
         File file = new File(directory);
         String extension = getFileExtension(directory);
@@ -161,8 +158,6 @@ public class ConversationService {
         return (dotIndex == -1) ? "" : fileName.substring(dotIndex + 1);
     }
 
-
-
     public void deleteTextMessage(Message message) {
         message.setStatus(MessageStatus.Deleted);
     }
@@ -174,17 +169,6 @@ public class ConversationService {
             returnMessageList.add(chatLog.get(i));
         }
         return returnMessageList;
-    }
-
-    public void updateConversationInList(Conversation conversationToUpdate) {
-        String conversationToUpdateId = conversationToUpdate.getId();
-        for (Conversation conversation : this.conversationList) {
-            if (conversation.getId().equals(conversationToUpdateId)) {
-                this.conversationList.remove(conversation);
-                this.conversationList.add(conversationToUpdate);
-                return;
-            }
-        }
     }
 
     public void saveConversationData() {

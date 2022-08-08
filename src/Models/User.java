@@ -107,7 +107,7 @@ public class User {
     }
 
     public List<User> getFriendList() {
-        return (List<User>) friends.values();
+        return new ArrayList<>(friends.values());
     }
 
     public Map<String, User> getFriendMap() {

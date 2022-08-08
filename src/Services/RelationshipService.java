@@ -16,7 +16,7 @@ public class RelationshipService {
 
     public boolean sendInvitation(User invitingUser, User invitedUser) {
         Map<String, User> friendMap = invitingUser.getFriendMap();
-        if (friendMap.containsKey(invitedUser.getUsername())) {
+        if (!friendMap.containsKey(invitedUser.getUsername())) {
             String invitingUserId = invitingUser.getId();
             String invitedUserId = invitedUser.getId();
             RelationshipStatus status = RelationshipStatus.pending;
@@ -31,7 +31,6 @@ public class RelationshipService {
 
     public void changeInvitationStatus(boolean approved, User invitingUser, User invitedUser) {
         Map<String, Relationship> invitingUserRelationship = invitingUser.getRelationshipMap();
-        Map<String, Relationship> invitedUserRelationship = invitedUser.getRelationshipMap();
         String invitingUserId = invitingUser.getId();
         String invitedUserId = invitedUser.getId();
         String relationshipId = invitingUserId + invitedUserId;

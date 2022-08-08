@@ -45,7 +45,8 @@ public class UserService {
         password = PasswordHash.getSHA256Password(password, salt);
         User user = new User(id, gender,dob, firstName, lastName, username, password, salt);
         User tempUser = this.findUserByID(user.getId());
-        if (tempUser == null) {
+        List<User> foundUsers = findUserByUsername(username);
+        if (tempUser == null && userList.isEmpty()) {
             this.userList.add(user);
             this.dataStorage.saveUserList(this.userList);
             return true;
@@ -78,18 +79,6 @@ public class UserService {
     public void SetAlias(String alias, User assignor, User assignee){
         alias = alias.trim();
         assignor.addNewAlias(assignee.getUsername(), alias);
-        updateUser(assignor);
-    }
-
-    public void updateUser(User userToUpdate) {
-        String userToUpdateId = userToUpdate.getId();
-        for (User user : this.userList) {
-            if (user.getId().equals(userToUpdateId)) {
-                this.userList.remove(user);
-                this.userList.add(userToUpdate);
-                return;
-            }
-        }
     }
 
     public void saveUserData() {
