@@ -1,20 +1,20 @@
 package Models;
 
 public class Relationship {
-    private String relationshipId;
+    private String id;
     private String invitedUserId;
     private String invitingUserId;
     private RelationshipStatus status;
 
     public Relationship(String relationshipId, String invitedUserId, String invitingUserId, RelationshipStatus status) {
-        this.relationshipId = relationshipId;
+        this.id = relationshipId;
         this.invitedUserId = invitedUserId;
         this.invitingUserId = invitingUserId;
         this.status = status;
     }
 
-    public String getRelationshipId() {
-        return relationshipId;
+    public String getId() {
+        return id;
     }
 
     public void setRelationshipId(String relationshipId) {

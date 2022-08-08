@@ -1,7 +1,5 @@
 package Models;
 
-import java.util.*;
-
 public class ConversationGroup extends Conversation {
     private Group receiver;
 
@@ -10,11 +8,11 @@ public class ConversationGroup extends Conversation {
         this.receiver = receiver;
     }
 
-    public Group getReceiver() {
+    public Group getGroup() {
         return receiver;
     }
 
-    public void setReceiver(Group receiver) {
+    public void setGroup(Group receiver) {
         this.receiver = receiver;
     }
 }

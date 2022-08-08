@@ -135,11 +135,11 @@ public class User {
     }
 
     public void setRelationship(Relationship relationship) {
-        this.relationships.put(relationship.getRelationshipId(), relationship);
+        this.relationships.put(relationship.getId(), relationship);
     }
 
     public void addNewRelationship(Relationship relationship) {
-        this.relationships.put(relationship.getRelationshipId(), relationship);
+        this.relationships.put(relationship.getId(), relationship);
     }
 
     public void addNewAlias(String username , String alias) {

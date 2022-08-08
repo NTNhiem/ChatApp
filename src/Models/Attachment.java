@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Attachment extends Message{
     private String directory;
+    private
     private AttachmentType type;
 
     public Attachment(Date sendDate, User sender, MessageStatus status, String directory, AttachmentType type) {

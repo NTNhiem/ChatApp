@@ -48,7 +48,7 @@ public class ConversationService {
         ConversationGroup returnConversation = null;
         boolean isExisted = false;
         for (ConversationGroup conversationGroup : conversationGroupList) {
-            Group currGroup = conversationGroup.getReceiver();
+            Group currGroup = conversationGroup.getGroup();
                 if (currGroup == group) {
                     returnConversation = conversationGroup;
                     isExisted = true;

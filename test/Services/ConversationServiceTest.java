@@ -3,6 +3,7 @@ package Services;
 import Models.*;
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +13,6 @@ class ConversationServiceTest {
     private static GroupService groupService;
     private static RelationshipService relationshipService;
     private static UserService userService;
-
 
     private static User testUser1;
     private static User testUser2;
@@ -26,10 +26,7 @@ class ConversationServiceTest {
         System.out.println("Starting unit test");
         System.out.println("Initializing conversation service...");
         conversationService = new ConversationService();
-        groupService = new GroupService();
-        relationshipService = new RelationshipService();
-        userService = new UserService();
-        System.out.println("Creating test user");
+        System.out.println("Creating test users");
         testUser1 = new User(
                 "12",
                 Gender.Male,
@@ -53,8 +50,8 @@ class ConversationServiceTest {
         );
 
         testUser3 = new User(
-                "34",
-                Gender.Female,
+                "56",
+                Gender.Male,
                 null,
                 "",
                 "",
@@ -65,9 +62,14 @@ class ConversationServiceTest {
 
         testUser1.addNewFriend(testUser2);
         testUser2.addNewFriend(testUser1);
-        groupService.createGroup("testGroup",false, testUser1);
-        ConversationGroup conversationGroup12 = conversationService.getConversationGroup(testUser1,testUser1.getGroups().get(0));
-        groupService.joinGroupByInvitation(testUser1.getGroups().get(0),testUser3 )
+
+        System.out.println("Creating test group");
+        group = new Group("1","testGroup",false);
+        List<User> member = new ArrayList<>();
+        member.add(testUser1);
+        member.add(testUser2);
+        member.add(testUser3);
+        group.setMembers(member);
     }
 
     @BeforeEach
@@ -93,15 +95,16 @@ class ConversationServiceTest {
     @Test
     @DisplayName("Test to see if it return correct group conversation")
     void testGetConversationGroup() {
-
-    }
-
-    @Test
-    void getAllAttachmentInConversation() {
+        ConversationGroup conversationGroup = conversationService.getConversationGroup(testUser3, group);
+        Group resultGroup = conversationGroup.getGroup();
+        assertNotNull(resultGroup);
+        assertEquals("testGroup", resultGroup.getName());
+        assertEquals(2, resultGroup.getMembers().size());
     }
 
     @Test
     void sendTextMessage() {
+        conversationService.sendTextMessage("This is a test message");
     }
 
     @Test
@@ -110,6 +113,10 @@ class ConversationServiceTest {
 
     @Test
     void deleteTextMessage() {
+    }
+
+    @Test
+    void getAllAttachmentInConversation() {
     }
 
     @Test
