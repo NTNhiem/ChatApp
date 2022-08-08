@@ -76,7 +76,7 @@ public class UserService {
         return id;
     }
 
-    public void SetAlias(String alias, User assignor, User assignee){
+    public void setAlias(String alias, User assignor, User assignee){
         alias = alias.trim();
         assignor.addNewAlias(assignee.getUsername(), alias);
     }
