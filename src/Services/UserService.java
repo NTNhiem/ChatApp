@@ -3,6 +3,7 @@ package Services;
 import Config.ChatAppConfig;
 import Data.DataStorage;
 import Models.Gender;
+import Ultilities.PasswordHash;
 import Models.User;
 import java.util.*;
 
@@ -46,6 +47,7 @@ public class UserService {
         User tempUser = this.findUserByID(user.getId());
         if (tempUser == null) {
             this.userList.add(user);
+            this.dataStorage.saveUserList(this.userList);
             return true;
         }
         return false;

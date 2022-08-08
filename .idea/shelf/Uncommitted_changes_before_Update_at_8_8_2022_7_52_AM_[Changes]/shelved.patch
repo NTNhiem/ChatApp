@@ -1,0 +1,213 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
++++ /dev/null	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM_[Changes]" date="1658996879324" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 7/28/2022 3:27 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM_[Changes]/shelved.patch	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
++++ /dev/null	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
+@@ -1,57 +0,0 @@
+-Index: src/Controller/Controller.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package Controller;\r\n\r\nimport Data.DataStorage;\r\nimport Models.Gender;\r\nimport Models.PasswordHash;\r\nimport Models.User;\r\n\r\nimport java.util.Date;\r\nimport java.util.List;\r\nimport java.util.Random;\r\nimport java.util.UUID;\r\n\r\npublic class Controller {\r\n    private List<User> userList;\r\n    private DataStorage dataStorage;\r\n\r\n    public Controller(List<User> userList) {\r\n        this.userList = userList;\r\n        this.dataStorage = DataStorage.getInstance();\r\n        this.userList = this.dataStorage.readListUserAsByte();\r\n    }\r\n\r\n    public User findUserByID(String id) {\r\n        for (User user : userList) {\r\n            if (user.getId().equals(id)) {\r\n                return user;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public boolean addNewUser(Gender gender, Date dob, String firstName, String lastName, String username, String password){\r\n        String id = UUID.randomUUID().toString();\r\n        password = PasswordHash.getSHA256Password(password);\r\n        User user = new User(id, gender,dob, firstName, lastName, username, password);\r\n        User tempUser = this.findUserByID(user.getId());\r\n        if (tempUser == null) {\r\n            this.userList.add(user);\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean login(String username, String password) {\r\n        username = username.trim();\r\n        password = password.trim();\r\n        String hashedPass = PasswordHash.getSHA256Password(password);\r\n        for (User user : userList) {\r\n            String usernameCheck = user.getUsername();\r\n            String passwordCheck = user.getPassword();\r\n            if (usernameCheck.equals(username) && passwordCheck.equals(hashedPass)) {\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public void logout() {\r\n        currentUser = null;\r\n    }\r\n\r\n    public void changeRelationship(int code) {\r\n\r\n    }\r\n\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/Controller/Controller.java b/src/Controller/Controller.java
+---- a/src/Controller/Controller.java	(revision 760f44cf055b43ce8fc4795d89022d1df2cb9d23)
+-+++ b/src/Controller/Controller.java	(date 1658996879309)
+-@@ -11,6 +11,8 @@
+- import java.util.UUID;
+- 
+- public class Controller {
+-+
+-+
+-     private List<User> userList;
+-     private DataStorage dataStorage;
+- 
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"datastorage\">\r\n      <change afterPath=\"$PROJECT_DIR$/config\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Config/ChatAppConfig.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Config/ChatAppConfig.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/Controller.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/Controller.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Data/DataStorage.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Data/DataStorage.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BvUwMjpHzg9LUl7AS3uoqtgkMs\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/IntelliJ repos/ChatApp/src/Models&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"\" />\r\n      <created>1657786292999</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657786292999</updated>\r\n      <workItem from=\"1657786294563\" duration=\"331000\" />\r\n      <workItem from=\"1658382255405\" duration=\"3157000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"1\">\r\n      <created>1657786546034</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657786546034</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"datastorage\">\r\n      <created>1658987283743</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1658987283743</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"1\" />\r\n    <MESSAGE value=\"datastorage\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"datastorage\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 760f44cf055b43ce8fc4795d89022d1df2cb9d23)
+-+++ b/.idea/workspace.xml	(date 1658996879309)
+-@@ -5,11 +5,7 @@
+-   </component>
+-   <component name="ChangeListManager">
+-     <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="datastorage">
+--      <change afterPath="$PROJECT_DIR$/config" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Config/ChatAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/ChatAppConfig.java" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Data/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/DataStorage.java" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -86,7 +82,14 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1658987283743</updated>
+-     </task>
+--    <option name="localTasksCounter" value="3" />
+-+    <task id="LOCAL-00003" summary="datastorage">
+-+      <created>1658991782441</created>
+-+      <option name="number" value="00003" />
+-+      <option name="presentableId" value="LOCAL-00003" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1658991782441</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="4" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
++++ /dev/null	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM_[Changes]" date="1658996968286" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 7/28/2022 3:28 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM_[Changes]/shelved.patch	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
++++ /dev/null	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
+@@ -1,57 +0,0 @@
+-Index: src/Controller/Controller.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package Controller;\r\n\r\nimport Data.DataStorage;\r\nimport Models.Gender;\r\nimport Models.PasswordHash;\r\nimport Models.User;\r\n\r\nimport java.util.Date;\r\nimport java.util.List;\r\nimport java.util.Random;\r\nimport java.util.UUID;\r\n\r\npublic class Controller {\r\n    private List<User> userList;\r\n    private DataStorage dataStorage;\r\n\r\n    public Controller(List<User> userList) {\r\n        this.userList = userList;\r\n        this.dataStorage = DataStorage.getInstance();\r\n    }\r\n\r\n    public User findUserByID(String id) {\r\n\r\n        for (User user : userList) {\r\n            if (user.getId().equals(id)) {\r\n                return user;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public boolean addNewUser(Gender gender, Date dob, String firstName, String lastName, String username, String password){\r\n        String id = UUID.randomUUID().toString();\r\n        password = PasswordHash.getSHA256Password(password);\r\n        User user = new User(id, gender,dob, firstName, lastName, username, password);\r\n        User tempUser = this.findUserByID(user.getId());\r\n        if (tempUser == null) {\r\n            this.userList.add(user);\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public boolean login(String username, String password) {\r\n        username = username.strip();\r\n        password = password.strip();\r\n        String hashedPass = PasswordHash.getSHA256Password(password);\r\n        for (User user : userList) {\r\n        }\r\n        return false;\r\n    }\r\n\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/Controller/Controller.java b/src/Controller/Controller.java
+---- a/src/Controller/Controller.java	(revision ff218a5cc1378eedf1d6f9b57fc798a861b532b1)
+-+++ b/src/Controller/Controller.java	(date 1658992197234)
+-@@ -11,6 +11,8 @@
+- import java.util.UUID;
+- 
+- public class Controller {
+-+
+-+
+-     private List<User> userList;
+-     private DataStorage dataStorage;
+- 
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"datastorage\">\r\n      <change afterPath=\"$PROJECT_DIR$/config\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Config/ChatAppConfig.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Config/ChatAppConfig.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/Controller.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/Controller.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Data/DataStorage.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Data/DataStorage.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BvUwMjpHzg9LUl7AS3uoqtgkMs\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/IntelliJ repos/ChatApp/src/Models&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"\" />\r\n      <created>1657786292999</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657786292999</updated>\r\n      <workItem from=\"1657786294563\" duration=\"331000\" />\r\n      <workItem from=\"1658382255405\" duration=\"3157000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"1\">\r\n      <created>1657786546034</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657786546034</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"datastorage\">\r\n      <created>1658987283743</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1658987283743</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"1\" />\r\n    <MESSAGE value=\"datastorage\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"datastorage\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision ff218a5cc1378eedf1d6f9b57fc798a861b532b1)
+-+++ b/.idea/workspace.xml	(date 1658996875101)
+-@@ -5,11 +5,7 @@
+-   </component>
+-   <component name="ChangeListManager">
+-     <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="datastorage">
+--      <change afterPath="$PROJECT_DIR$/config" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Config/ChatAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/ChatAppConfig.java" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Data/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/DataStorage.java" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -86,7 +82,14 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1658987283743</updated>
+-     </task>
+--    <option name="localTasksCounter" value="3" />
+-+    <task id="LOCAL-00003" summary="datastorage">
+-+      <created>1658991782441</created>
+-+      <option name="number" value="00003" />
+-+      <option name="presentableId" value="LOCAL-00003" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1658991782441</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="4" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"small changes\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/Models/Conversation.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Models/PasswordHash.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Ultilities/PasswordHash.java\" afterDir=\"false\" />\r\n    </list>\r\n    <list id=\"c9b5e2a5-caa0-46d1-a137-1205d4384fb4\" name=\"Changes by Tieng\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/Ultilities/InvitationCodeGenerator.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Services/UserService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Services/UserService.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BvUwMjpHzg9LUl7AS3uoqtgkMs\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/IntelliJ repos/ChatApp/src/Models&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IntelliJ repos\\ChatApp\\src\\Models\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3\" name=\"Changes\" comment=\"\" />\r\n      <created>1657786292999</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657786292999</updated>\r\n      <workItem from=\"1657786294563\" duration=\"331000\" />\r\n      <workItem from=\"1658382255405\" duration=\"3157000\" />\r\n      <workItem from=\"1659595504740\" duration=\"1086000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"1\">\r\n      <created>1657786546034</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657786546034</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"datastorage\">\r\n      <created>1658987283743</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1658987283743</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"datastorage\">\r\n      <created>1658991782441</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1658991782441</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"change hash\">\r\n      <created>1659593582735</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659593582735</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"change hash\">\r\n      <created>1659593637327</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659593637328</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"small changes\">\r\n      <created>1659595608689</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659595608689</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"small change\">\r\n      <created>1659595685248</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659595685248</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"1\" />\r\n    <MESSAGE value=\"datastorage\" />\r\n    <MESSAGE value=\"change hash\" />\r\n    <MESSAGE value=\"small changes\" />\r\n    <MESSAGE value=\"Changes by Tieng\" />\r\n    <MESSAGE value=\"small change\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"small change\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 33718a829ed2cbc25080343ead94b91e52c47d99)
++++ b/.idea/workspace.xml	(date 1659839685825)
+@@ -4,10 +4,12 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="small changes">
+-      <change afterPath="$PROJECT_DIR$/src/Models/Conversation.java" afterDir="false" />
++    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="small changes 2">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_27_PM__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_28_2022_3_28_PM__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ultilities/PasswordHash.java" afterDir="false" />
+     </list>
+     <list id="c9b5e2a5-caa0-46d1-a137-1205d4384fb4" name="Changes by Tieng" comment="">
+       <change afterPath="$PROJECT_DIR$/src/Ultilities/InvitationCodeGenerator.java" afterDir="false" />
+@@ -74,6 +76,8 @@
+       <workItem from="1657786294563" duration="331000" />
+       <workItem from="1658382255405" duration="3157000" />
+       <workItem from="1659595504740" duration="1086000" />
++      <workItem from="1659597939462" duration="259000" />
++      <workItem from="1659834829225" duration="1794000" />
+     </task>
+     <task id="LOCAL-00001" summary="1">
+       <created>1657786546034</created>
+@@ -124,7 +128,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1659595685248</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="small changes 2">
++      <created>1659598019908</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1659598019908</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -148,6 +159,7 @@
+     <MESSAGE value="small changes" />
+     <MESSAGE value="Changes by Tieng" />
+     <MESSAGE value="small change" />
+-    <option name="LAST_COMMIT_MESSAGE" value="small change" />
++    <MESSAGE value="small changes 2" />
++    <option name="LAST_COMMIT_MESSAGE" value="small changes 2" />
+   </component>
+ </project>
+\ No newline at end of file
