@@ -24,6 +24,25 @@ public class DataStorage {
 
     private final String attachmentPath = chatAppConfig.getStringProperty("attachmentPath");
 
+    public String getDataPath() {
+        return dataPath;
+    }
+
+    public String getUserPath() {
+        return userPath;
+    }
+
+    public String getGroupPath() {
+        return groupPath;
+    }
+
+    public String getConvPath() {
+        return convPath;
+    }
+
+    public String getAttachmentPath() {
+        return attachmentPath;
+    }
 
     protected DataStorage() {
         this.createDataFolder();
@@ -204,9 +223,9 @@ public class DataStorage {
         return list;
     }
 
-    public void saveAttachment(String directory, int id) {
+    public void saveAttachment(String directory, int id, String extension) {
         File src = new File(directory);
-        File dest = new File(attachmentPath + "\\" + id);
+        File dest = new File(attachmentPath + "\\" + id + "." + extension);
         copyFileUsingStream(src, dest);
     }
 

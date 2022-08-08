@@ -115,43 +115,43 @@ public class ConversationService {
         return true;
     }
 
-    public boolean sendAttachment(String directory, Conversation conversation, User sender) {
+    public boolean sendAttachment   (String directory, Conversation conversation, User sender) {
         Calendar cal = Calendar.getInstance();
         File file = new File(directory);
-        String type = getFileExtension(directory);
+        String extension = getFileExtension(directory);
         AttachmentType attachmentType = AttachmentType.File;
         String[] audioType = chatAppConfig.getStringProperty("audioType").split(",");
         String[] videoType = chatAppConfig.getStringProperty("videoType").split(",");
         String[] imageType = chatAppConfig.getStringProperty("imageType").split(",");
         String[] documentType = chatAppConfig.getStringProperty("documentType").split(",");
         for (String s : audioType) {
-            if (type.equals(s)) {
+            if (extension.equals(s)) {
                 attachmentType = AttachmentType.Audio;
                 break;
             }
         }
         for (String s : videoType) {
-            if (type.equals(s)) {
+            if (extension.equals(s)) {
                 attachmentType = AttachmentType.Video;
                 break;
             }
         }
         for (String s : imageType) {
-            if (type.equals(s)) {
+            if (extension.equals(s)) {
                 attachmentType = AttachmentType.Image;
                 break;
             }
         }
         for (String s : documentType) {
-            if (type.equals(s)) {
+            if (extension.equals(s)) {
                 attachmentType = AttachmentType.Document;
                 break;
             }
         }
-        Attachment attachment = new Attachment(cal.getTime(), sender, MessageStatus.Sent, directory, attachmentType);
+        Attachment attachment = new Attachment(cal.getTime(), sender, MessageStatus.Sent, directory, attachmentType, file.getName(), extension );
         conversation.addMessage(attachment);
-        dataStorage.saveAttachment(directory,);
-        updateConversationInList(conversation);
+        dataStorage.saveAttachment(directory,attachment.getId(),extension);
+        attachment.setDirectory(dataStorage.getAttachmentPath() + "\\" + attachment.getId());
         return false;
     }
 
@@ -160,6 +160,8 @@ public class ConversationService {
         int dotIndex = fileName.lastIndexOf('.');
         return (dotIndex == -1) ? "" : fileName.substring(dotIndex + 1);
     }
+
+
 
     public void deleteTextMessage(Message message) {
         message.setStatus(MessageStatus.Deleted);

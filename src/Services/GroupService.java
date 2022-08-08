@@ -140,4 +140,18 @@ public class GroupService {
     public List<User> getAllGroupMember(Group group) {
         return group.getMembers();
     }
+
+    public User findUserByID(String id, Group group) {
+        for (User user : group.getMembers()) {
+            if (user.getId().equals(id)) {
+                return user;
+            }
+        }
+        for (User user : group.getAdmin()) {
+            if (user.getId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }
