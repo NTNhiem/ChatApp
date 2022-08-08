@@ -132,4 +132,12 @@ public class GroupService {
     public void saveGroupData() {
         this.dataStorage.saveGroupList(this.groupList);
     }
+
+    public List<Group> getAllGroup(User currUser) {
+        return currUser.getGroups();
+    }
+
+    public List<User> getAllGroupMember(Group group) {
+        return group.getMembers();
+    }
 }

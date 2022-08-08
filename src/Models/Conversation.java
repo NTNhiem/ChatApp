@@ -15,10 +15,6 @@ public abstract class Conversation {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public List<Message> getChatLog() {
         List<Message> returnList = new ArrayList<>();
         for (Message message : chatLog) {

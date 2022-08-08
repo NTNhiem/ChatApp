@@ -73,20 +73,23 @@ public class ConversationService {
         return null;
     }
 
-    public TextMessage findMessageText(String keyword, Conversation conversation) {
+    public List<TextMessage> findMessageText(String keyword, Conversation conversation) {
         keyword = keyword.trim().toLowerCase();
         TextMessage foundMessage = null;
+        List<TextMessage> textMessageList = new ArrayList<>();
         for (Message message : conversation.getChatLog()) {
             if (message instanceof TextMessage) {
                 String content = ((TextMessage) message).getContent().toLowerCase();
                 if (content.contains(keyword) || content.startsWith(keyword)) {
                     foundMessage = (TextMessage) message;
-                    return foundMessage;
+                    textMessageList.add(foundMessage);
                 }
             }
         }
-        return null;
+        return textMessageList;
     }
+
+    find
 
     public String generateConversationID() {
         String id;
@@ -147,6 +150,7 @@ public class ConversationService {
         }
         Attachment attachment = new Attachment(cal.getTime(), sender, MessageStatus.Sent, directory, attachmentType);
         conversation.addMessage(attachment);
+        dataStorage.saveAttachment(directory,);
         updateConversationInList(conversation);
         return false;
     }

@@ -17,10 +17,6 @@ public class Relationship {
         return id;
     }
 
-    public void setRelationshipId(String relationshipId) {
-        this.relationshipId = relationshipId;
-    }
-
     public String getInvitedUserId() {
         return invitedUserId;
     }

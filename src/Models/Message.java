@@ -24,10 +24,6 @@ public abstract class Message {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public Date getSendDate() {
 		return sendDate;
 	}
