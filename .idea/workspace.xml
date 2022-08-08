@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="small changes">
-      <change afterPath="$PROJECT_DIR$/src/Models/Conversation.java" afterDir="false" />
+    <list default="true" id="164a6ff8-4b8e-4b9e-9924-e63a6b70e6f3" name="Changes" comment="change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PasswordHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ultilities/PasswordHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Services/ConversationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Services/ConversationServiceTest.java" afterDir="false" />
     </list>
-    <list id="c9b5e2a5-caa0-46d1-a137-1205d4384fb4" name="Changes by Tieng" comment="">
+    <list id="c9b5e2a5-caa0-46d1-a137-1205d4384fb4" name="Changes by Tieng" comment="Changes by Tieng">
       <change afterPath="$PROJECT_DIR$/src/Ultilities/InvitationCodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.java" afterDir="false" />
     </list>
@@ -124,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659595685248</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="change">
+      <created>1659920092996</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659920092996</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +154,7 @@
     <MESSAGE value="small changes" />
     <MESSAGE value="Changes by Tieng" />
     <MESSAGE value="small change" />
-    <option name="LAST_COMMIT_MESSAGE" value="small change" />
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
   </component>
 </project>

@@ -3,13 +3,17 @@ package Services;
 import Models.*;
 import org.junit.jupiter.api.*;
 
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConversationServiceTest {
-    private static ConversationService service;
+    private static ConversationService conversationService;
+    private static GroupService groupService;
+    private static RelationshipService relationshipService;
+    private static UserService userService;
+
+
     private static User testUser1;
     private static User testUser2;
 
@@ -21,7 +25,10 @@ class ConversationServiceTest {
     static void setUpAll() {
         System.out.println("Starting unit test");
         System.out.println("Initializing conversation service...");
-        service = new ConversationService();
+        conversationService = new ConversationService();
+        groupService = new GroupService();
+        relationshipService = new RelationshipService();
+        userService = new UserService();
         System.out.println("Creating test user");
         testUser1 = new User(
                 "12",
@@ -58,6 +65,9 @@ class ConversationServiceTest {
 
         testUser1.addNewFriend(testUser2);
         testUser2.addNewFriend(testUser1);
+        groupService.createGroup("testGroup",false, testUser1);
+        ConversationGroup conversationGroup12 = conversationService.getConversationGroup(testUser1,testUser1.getGroups().get(0));
+        groupService.joinGroupByInvitation(testUser1.getGroups().get(0),testUser3 )
     }
 
     @BeforeEach
@@ -73,7 +83,7 @@ class ConversationServiceTest {
     @Test
     @DisplayName("Test get a new conversation between 2 users")
     void testGetConversationSingle() {
-        ConversationSingle conversationSingle = service.getConversationSingle(testUser1, testUser2);
+        ConversationSingle conversationSingle = conversationService.getConversationSingle(testUser1, testUser2);
         List<User> member = conversationSingle.getMember();
         assertEquals(2, member.size());
         assertEquals("12", member.get(0).getId());
@@ -81,7 +91,8 @@ class ConversationServiceTest {
     }
 
     @Test
-    void getConversationGroup() {
+    @DisplayName("Test to see if it return correct group conversation")
+    void testGetConversationGroup() {
 
     }
 
